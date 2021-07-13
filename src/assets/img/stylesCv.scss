@@ -1,0 +1,136 @@
+.curiculum {
+  span {
+    color: #035e93;
+  }
+
+  hr {
+    border: 0;
+    height: 0.1em;
+    background-image: linear-gradient(to right, #828282, rgba(0, 0, 0, 0));
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 16em 1fr;
+    background: #dfdfdf;
+  }
+
+  .lang:-webkit-any-link {
+    position: absolute;
+    top: 1em;
+    left: 12em;
+    text-decoration: none;
+    color: #dfdfdf;
+    background: #004c8c;
+    padding: 0.3em;
+    border-radius: 0.2em;
+    transition: 0.2s ease;
+  }
+  .lang:-webkit-any-link:hover,
+  .lang:-webkit-any-link :focus {
+    background: #828282;
+    color: #004c8c;
+    transition: 0.2s ease;
+  }
+
+  .aside {
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+    padding: 0 1em;
+    display: grid;
+    color: #dfdfdf;
+    background: #035e93;
+    justify-self: stretch;
+  }
+  .aside h1 {
+    margin-right: 0.5em;
+    font-size: 2em;
+    font-weight: 800;
+  }
+  .aside h1 small {
+    font-size: 60%;
+  }
+  .aside h3 {
+    max-height: 1.3em;
+    position: relative;
+    left: -1em;
+    padding: 0.3em 1em;
+    width: 100%;
+    color: #e6e6e6;
+    background: #004c8c;
+  }
+
+  .article {
+    font-family: "Lato", sans-serif;
+    padding: 0 1em;
+    max-width: 80%;
+    color: #828282;
+    justify-self: stretch;
+  }
+  .article p {
+    line-height: 1.3em;
+  }
+  .article h2 {
+    margin: 0;
+    color: #004c8c;
+  }
+  .article li {
+    margin: 0.5em 0;
+  }
+
+  .contact {
+    margin: 0.2em 0 0.2em 0;
+  }
+  .contact a {
+    text-decoration: none;
+    color: #e6e6e6;
+    transition: 0.2s ease;
+  }
+  .contact a:hover,
+  .contact a :focus {
+    color: #828282;
+    transition: 0.2s ease;
+  }
+
+  .skills p {
+    margin: 0.5em 0 0.2em 0;
+  }
+
+  .basic {
+    background: linear-gradient(
+      to right,
+      #828282,
+      #828282,
+      #828282,
+      rgba(0, 0, 0, 0)
+    );
+    width: 35%;
+    height: 1em;
+  }
+
+  .middle {
+    background: linear-gradient(
+      to right,
+      #828282,
+      #828282,
+      #828282,
+      rgba(0, 0, 0, 0)
+    );
+    width: 70%;
+    height: 1em;
+  }
+
+  .full {
+    background: linear-gradient(
+      to right,
+      #828282,
+      #828282,
+      #828282,
+      rgba(0, 0, 0, 0)
+    );
+    width: 100%;
+    height: 1em;
+  }
+}

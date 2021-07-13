@@ -6,6 +6,10 @@ html {
     top: 0px;
   }
   body {
+    ::selection  {
+      color: #ccc;
+      background: #333;
+    }
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,6 +20,6 @@ html {
     bottom: 0px;
   }
 }
-h1{
-  margin: .2rem;
+h1 {
+  margin: 0.2rem;
 }

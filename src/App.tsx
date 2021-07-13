@@ -1,7 +1,5 @@
 import * as React from "react";
 import "./App.scss";
-// import { FooterLayout } from "./components/FooterLayout";
-import { HeaderLayout } from "./components/HeaderLayout";
 import { MainLayout } from "./components/MainLayout";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { teal } from "@material-ui/core/colors";
@@ -15,6 +13,9 @@ const theme = createMuiTheme({
       main: "#ccc",
     },
     secondary: teal,
+    error: {
+      main: "#ccc",
+    },
   },
 });
 export const App: React.FC = () => {
@@ -28,13 +29,9 @@ export const App: React.FC = () => {
         >
           <ThemeProvider theme={theme}>
             <div className="App">
-              <header>
-                <HeaderLayout />
-              </header>
               <body style={{ background: "#333" }}>
                 <MainLayout />
               </body>
-              <footer>{/* <FooterLayout /> */}</footer>
             </div>
           </ThemeProvider>
         </Typography>

@@ -1,5 +1,8 @@
 import React from "react";
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Button,
   Card,
   CardActionArea,
@@ -12,7 +15,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
-import { Link } from "react-router-dom";
+import { ContactForm } from "../ContactForm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,22 +33,29 @@ export const NavForm: React.FC = () => {
   return (
     <Grid container>
       <Card className={classes.root}>
-        <Link to="/form" />
-        <CardActionArea>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              <Grid container spacing={2} direction="row-reverse">
-                <FormatListBulletedIcon color="secondary" />
-              </Grid>
-              Kontaktný formular
-            </Typography>
-
-            <Typography variant="body2" color="secondary" component="p">
-              Budem rád ak my pošlete správu. Či už len nejaký Váš postreh alebo
-              pracovnú ponuku. Vopred vám veľmi ďakujem. Vážim si to.
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        <CardContent>
+          <Accordion className={classes.root}>
+            <CardActionArea>
+              <AccordionSummary
+                expandIcon={<FormatListBulletedIcon color="secondary" />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Grid container direction="row">
+                  <Typography variant="h5" component="h2">
+                    Kontaktný formular
+                  </Typography>
+                </Grid>
+                <Typography component="h4">
+                  Budem rád ak my pošlete správu.
+                </Typography>
+              </AccordionSummary>
+            </CardActionArea>
+            <AccordionDetails>
+                <ContactForm  />
+            </AccordionDetails>
+          </Accordion>
+        </CardContent>
         <CardActions>
           <Button size="small" color="primary">
             Explore content

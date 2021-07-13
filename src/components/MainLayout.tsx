@@ -12,6 +12,9 @@ import { Certification } from "./Main/Certification";
 import { OtherChips } from "./Main/OtherChips";
 import { NextGoals } from "./Main/NextGoals";
 import { HeaderMain } from "./Header/HeaderMain";
+import { SocialIcon } from "./Main/SocialIcon";
+import { Fffoter } from "./Footer/Fffoter";
+import { WorkExperience } from "./Main/WorkExperience";
 
 export const MainLayout: React.FC = () => {
   const theme = createMuiTheme({
@@ -56,19 +59,13 @@ export const MainLayout: React.FC = () => {
                     <h3>My next goals.</h3>
                     <NextGoals />
                   </Box>
-                  <Box margin="2" textAlign="center">
-                    <h3>My work experience.</h3>
-                    <Typography color="secondary">
-                      Just a three month praxes in Ringier axel springer on post
-                      fulstack webdeveloper.
-                    </Typography>
-                  </Box>
+                 <WorkExperience/>
                 </article>
-                <footer>
-                  <p>linky na socialne siete</p>
-                  <p>odkaz na kontaktny formular</p>
-                </footer>
               </main>
+              <footer>
+                <SocialIcon />
+                <Fffoter />
+              </footer>
             </Typography>
           </Container>
         </CssBaseline>

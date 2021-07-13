@@ -59,7 +59,7 @@ export const Certification: React.FC = () => {
           justify="center"
           alignItems="center"
         >
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <div className={classes.paper}>
               <Chip
                 variant="default"
@@ -71,7 +71,7 @@ export const Certification: React.FC = () => {
               />
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <div className={classes.paper}>
               <Chip
                 variant="default"
@@ -83,7 +83,7 @@ export const Certification: React.FC = () => {
               />
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <div className={classes.paper}>
               <Chip
                 variant="default"

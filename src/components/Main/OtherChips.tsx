@@ -18,6 +18,20 @@ export const OtherChips: React.FC = () => {
         color="default"
         clickable={true}
       />
+       <Chip
+        variant="outlined"
+        size="small"
+        label="Vuetify"
+        color="default"
+        clickable={true}
+      />
+          <Chip
+        variant="outlined"
+        size="small"
+        label="Quasar framework"
+        color="default"
+        clickable={true}
+      />
       <Chip
         variant="outlined"
         size="small"
@@ -127,6 +141,13 @@ export const OtherChips: React.FC = () => {
         variant="outlined"
         size="small"
         label="Postman"
+        color="default"
+        clickable={true}
+      />
+         <Chip
+        variant="outlined"
+        size="small"
+        label="Docker"
         color="default"
         clickable={true}
       />

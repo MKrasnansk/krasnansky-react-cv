@@ -1,18 +1,25 @@
 import React from "react";
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Button,
   Card,
   CardActionArea,
   CardActions,
   CardContent,
   createStyles,
+  Dialog,
+  DialogContent,
   Grid,
   makeStyles,
   Theme,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
-import { Link } from "react-router-dom";
+import { About } from "../About";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,29 +33,59 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 export const NavAbout: React.FC = () => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Grid container>
+      <Dialog
+        fullScreen={fullScreen}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="responsive-dialog-title"
+        scroll="paper"
+      >
+        <DialogContent style={{ background: "#2f2f2f" }}>
+          <About />
+        </DialogContent>
+        <Button onClick={handleClose} color="primary" autoFocus>
+            Ok
+          </Button>
+      </Dialog>
       <Card className={classes.root}>
-        <Link to="/" />
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              <Grid container spacing={2} direction="row-reverse">
-                <FingerprintIcon color="secondary" />
-              </Grid>
-              About me
-            </Typography>
-            <Typography variant="body2" color="secondary" component="p">
-              Ahoj v oblasti webu a aplikaciji sa pohybujem už dva roky.
-              Spočiatku som hľadal cestu, ako sa niekam dostať v tomto obore.
-              Dnes som vo fáze, kde už viem zápasiť aj so zložitejšími procesmi.
-            </Typography>
+            <Accordion className={classes.root}>
+              <AccordionSummary
+                expandIcon={<FingerprintIcon color="secondary" />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Grid container direction="row">
+                  <Typography variant="h5" component="h2">
+                    About me
+                  </Typography>
+                </Grid>
+                <Typography component="h4">
+                  I am junior fulstack developer{" "}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <About />
+              </AccordionDetails>
+            </Accordion>
           </CardContent>
         </CardActionArea>
-
         <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" onClick={handleClickOpen}>
             Explore content
           </Button>
         </CardActions>
