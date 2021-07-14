@@ -7,6 +7,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -19,6 +20,8 @@ const theme = createMuiTheme({
   },
 });
 export const App: React.FC = () => {
+
+
   return (
     <>
       <CssBaseline />
