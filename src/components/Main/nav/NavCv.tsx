@@ -57,8 +57,8 @@ export const NavCv: React.FC = () => {
           <Curiculum />
         </DialogContent>
         <Button onClick={handleClose} color="primary" autoFocus>
-            Ok
-          </Button>
+          Ok
+        </Button>
       </Dialog>
       <Card className={classes.root}>
         <CardActionArea>

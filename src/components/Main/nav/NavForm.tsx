@@ -9,10 +9,14 @@ import {
   CardActions,
   CardContent,
   createStyles,
+  Dialog,
+  DialogContent,
   Grid,
   makeStyles,
   Theme,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
 import { ContactForm } from "../ContactForm";
@@ -29,9 +33,33 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 export const NavForm: React.FC = () => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Grid container>
+      <Dialog
+        fullScreen={fullScreen}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="responsive-dialog-title"
+        scroll="paper"
+      >
+        <DialogContent style={{ background: "#2f2f2f" }}>
+          <ContactForm />
+        </DialogContent>
+        <Button onClick={handleClose} color="primary" autoFocus>
+          Close
+        </Button>
+      </Dialog>
       <Card className={classes.root}>
         <CardContent>
           <Accordion className={classes.root}>
@@ -52,12 +80,12 @@ export const NavForm: React.FC = () => {
               </AccordionSummary>
             </CardActionArea>
             <AccordionDetails>
-                <ContactForm  />
+              <ContactForm />
             </AccordionDetails>
           </Accordion>
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" onClick={handleClickOpen}>
             Explore content
           </Button>
         </CardActions>
