@@ -115,7 +115,7 @@ export const ContactForm: React.FC = () => {
       console.log(objectMessage);
       try {
         await axios
-          .post("http://localhost:3001/api/contact", objectMessage)
+          .post("mailsender-to-cv.netlify.app/api/contact", objectMessage)
           .then((response: AxiosResponse) => {
             if (response.status === 201) {
               setSend(true);
@@ -142,7 +142,6 @@ export const ContactForm: React.FC = () => {
           <TextField
             disabled={send ? true : false}
             className={classes.err}
-            // error={errName}
             helperText={required ? "This field is required!" : ""}
             type="text"
             value={name}
@@ -165,7 +164,6 @@ export const ContactForm: React.FC = () => {
           <TextField
             disabled={send ? true : false}
             className={classes.err}
-            // error={errEmail}
             helperText={required ? "Email is not vallid!" : ""}
             type="email"
             value={email}
@@ -189,7 +187,6 @@ export const ContactForm: React.FC = () => {
           <TextField
             disabled={send ? true : false}
             className={classes.err}
-            // error={errSubject}
             helperText={required ? "This field is required!" : ""}
             type="text"
             onChange={handleSubject}
@@ -213,7 +210,6 @@ export const ContactForm: React.FC = () => {
           <TextField
             disabled={send ? true : false}
             className={classes.err}
-            // error={errMessage}
             helperText={required ? "This field is required!" : ""}
             type="textarea"
             onChange={handleMessage}
