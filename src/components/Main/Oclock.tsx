@@ -12,21 +12,14 @@ export const Oclock: React.FC = () => {
   return (
     <Grid container direction="row-reverse" style={{ paddingTop: 20 }}>
       <Box color="primary.main">
-        <Grid
-          container
-          justify="flex-end"
-          alignItems="flex-end"
-          direction="column"
-        ></Grid>
-
-        <Grid
+        <Grid style={{ padding: 0 , margin: 0 }}
           container
           justify="flex-end"
           alignItems="flex-end"
           direction="column"
         >
-          <span>{new Date().toLocaleDateString()}</span>
-          <h1>{timer.time.toLocaleTimeString()}</h1>
+          <h6 style={{ padding: 0 , margin: 0 }}>{new Date().toLocaleDateString()}</h6>
+          <h3 style={{ padding: 0 , margin: 0 }}>{timer.time.toLocaleTimeString()}</h3>
         </Grid>
       </Box>
     </Grid>

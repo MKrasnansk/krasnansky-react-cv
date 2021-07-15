@@ -126,26 +126,34 @@ export const Curiculum: React.FC = () => {
         </aside>
         <article className="article">
           <p>
-            Zaujímam sa o programovanie, predovšetkým <span>front-end</span> s presahom do back-end, veľmi ma baví
-            práca s <span>CSS</span> a<span>JavaScript</span>-om. Intenzívne sa
-            učím viac ako rok, rád získavam informácie a neustále rozvíjam svoje
-            zručnosti. S programovaním sa stretávam na dennej báze. Viem ako
-            funguje Scrum. Bol som aj členom v developerskom teame. Za každý prejavený záujem o moje
-            skúsenosti, budem veľmi vďačný. Svoj záujem smerujem predovšetkým na
-            technológie (<span>React.js, TypeScript, Material-UI, Css/Sass, Nest.js(Node.js) + Databázy</span>), no
-            zároveň som otvorený novým výzvam.
+            Zaujímam sa o programovanie, predovšetkým <span>front-end</span> s
+            presahom do back-end, veľmi ma baví práca s <span>CSS</span> a
+            <span>JavaScript</span>-om. Intenzívne sa učím viac ako rok, rád
+            získavam informácie a neustále rozvíjam svoje zručnosti. S
+            programovaním sa stretávam na dennej báze. Viem ako funguje Scrum.
+            Bol som aj členom v developerskom teame. Za každý prejavený záujem o
+            moje skúsenosti, budem veľmi vďačný. Svoj záujem smerujem
+            predovšetkým na technológie (
+            <span>
+              React.js, TypeScript, Material-UI, Css/Sass, Nest.js(Node.js) +
+              Databázy
+            </span>
+            ), no zároveň som otvorený novým výzvam.
           </p>
           <hr />
           <h2>Pracovné skúsenosti</h2>
           <hr />
           <ul>
+            <li>Ringier axel springer - web-developer (3/2021 - 7/2021)</li>
+            <ul>
+              <li>Práca v agilnom teame</li>
+              <li>Spolupráca na projektoch</li>
+              <li>Technológie: React.js, TypeScript, Css, Bootsrap, Nest.js, Node.js, Api </li>
+            </ul>
             <li>
-              Ringier axel springer - web-developer (3/2021 - 7/2021)
-            </li>
-            <li>
-              Dalšie pracovné skúsenosti nie sú z oblasti záujmu (Taxi,
-              Manažér v sťahovacej službe, Koordinátor vo Vw-BA, Vodič MHD,
-              Mechanik v autoservise)
+              Ďalšie pracovné skúsenosti nie sú z oblasti záujmu (Taxi, Manažér
+              v sťahovacej službe, Koordinátor vo Vw-BA, Vodič MHD, Mechanik v
+              autoservise)
             </li>
           </ul>
 
@@ -154,11 +162,11 @@ export const Curiculum: React.FC = () => {
           <hr />
 
           <p>
-            <strong>Grafický dizajn / Počítačová grafika</strong>
+            <strong>Grafický dizajn</strong>
           </p>
           <p>
             <i>
-              2004 - 2009 Stredná Umelecká Škola Animovanej Tvorby – Bratislava
+              2004 - 2009 Stredná umelecká Škola Animovanej Tvorby – Bratislava
             </i>
           </p>
 
@@ -167,10 +175,14 @@ export const Curiculum: React.FC = () => {
           <hr />
           <ul>
             <strong>Udemy</strong>
-            <li>React - The Complete Guide (incl Hooks, React Router, Redux)</li>
+            <li>
+              React - The Complete Guide (incl Hooks, React Router, Redux)
+            </li>
             <li>Master NestJS - The JavaScript Node.js Framework</li>
             <li>Understanding TypeScript - 2021 Edition</li>
-            <li>NestJS Zero to Hero - Modern TypeScript Back-end Development</li>
+            <li>
+              NestJS Zero to Hero - Modern TypeScript Back-end Development
+            </li>
             <li>NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)</li>
             <li>The Complete Modern JavaScript Masterclass 2021</li>
             <li>Quasar V1: PWA (with Vue JS 2, Firebase, NodeJS & Express)</li>

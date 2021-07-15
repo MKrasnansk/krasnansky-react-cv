@@ -6,7 +6,7 @@ export const WorkExperience: React.FC = () => {
     <Box style={{marginBottom:50}} textAlign="center">
       <h3>My work experience.</h3>
       <Typography color="secondary">
-        Just a three month praxes in Ringier axel springer on post fulstack
+        Three months of practice in Ringier axel springer on post fulstack
         webdeveloper.
       </Typography>
     </Box>
