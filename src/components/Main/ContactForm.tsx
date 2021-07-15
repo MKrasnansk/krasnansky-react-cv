@@ -112,7 +112,6 @@ export const ContactForm: React.FC = () => {
         subject,
         message,
       };
-      console.log(objectMessage);
       try {
         await axios
           .post("mailsender-to-cv.netlify.app/api/contact", objectMessage)
