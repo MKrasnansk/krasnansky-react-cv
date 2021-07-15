@@ -14,7 +14,7 @@ export const StravaApi: React.FC = () => {
   const [activities, setActivites] = useState<Activity[]>([]);
   const id: string = "68395";
   const secret: string = "f77ddbde60076ffb1398c105c7290d60c82cc249";
-  const code: string = "13099208d6c33a576ffdc40bb9f1971ca4b5e181";
+  // const code: string = "13099208d6c33a576ffdc40bb9f1971ca4b5e181";
   const refreshToken: string = "9a1b1f9114a5588294bf1599f31e7c938b490759";
   const auth_link: string = "https://www.strava.com/oauth/token";
   const activities_link: string =

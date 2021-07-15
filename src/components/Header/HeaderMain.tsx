@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Container } from "@material-ui/core";
 import Typewriter from "typewriter-effect";
