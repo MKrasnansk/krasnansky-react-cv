@@ -17,6 +17,8 @@ export const GalleryCard: React.FC = () => {
           title={tile.title}
           info={tile.info}
           describe={tile.describe}
+          source={tile.sourceHref}
+          demo={tile.liveDemoHref}
         />
       ))}
     </Grid>

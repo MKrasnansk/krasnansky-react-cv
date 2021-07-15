@@ -8,6 +8,7 @@ import {
   createStyles,
   Dialog,
   DialogContent,
+  Grid,
   makeStyles,
   Theme,
   Typography,
@@ -33,9 +34,11 @@ interface Props {
   title: string;
   info: string;
   describe: string;
+  source: string;
+  demo: string;
 }
 export const WorkCardItem: React.FC<Props> = (props) => {
-  const { title, info, describe } = props;
+  const { title, info, describe, source, demo } = props;
   const [open, setOpen] = useState(false);
   const classes = useStyles();
   const theme = useTheme();
@@ -48,6 +51,7 @@ export const WorkCardItem: React.FC<Props> = (props) => {
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <Card className={classes.root}>
       <Dialog
@@ -57,9 +61,25 @@ export const WorkCardItem: React.FC<Props> = (props) => {
         aria-labelledby="responsive-dialog-title"
         scroll="paper"
       >
-        <DialogContent style={{ background: "#2f2f2f" }}>
+        <DialogContent style={{ background: "#2f2f2f", color: "#ccc" }}>
           <h3>{title}</h3>
           <p>{describe}</p>
+          <Grid container direction="row-reverse">
+            {source.length > 0 ? (
+              <Button href={source} color="secondary">
+                Source
+              </Button>
+            ) : (
+              ""
+            )}
+            {demo.length > 0 ? (
+              <Button href={demo} color="secondary">
+                Live Demo
+              </Button>
+            ) : (
+              ""
+            )}
+          </Grid>
         </DialogContent>
         <Button
           onClick={handleClose}
