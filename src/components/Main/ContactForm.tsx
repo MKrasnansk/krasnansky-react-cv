@@ -114,7 +114,7 @@ export const ContactForm: React.FC = () => {
       };
       try {
         await axios
-          .post("mailsender-to-cv.netlify.app/api/contact", objectMessage)
+          .post("https://api-cv-mail.herokuapp.com/api/contact", objectMessage)
           .then((response: AxiosResponse) => {
             if (response.status === 201) {
               setSend(true);

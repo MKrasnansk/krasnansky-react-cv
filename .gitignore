@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
+/mail-api
 .pnp.js
 
 # testing
