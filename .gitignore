@@ -5,6 +5,7 @@
 /.pnp
 /mail-api
 .pnp.js
+Procfile
 
 # testing
 /coverage
