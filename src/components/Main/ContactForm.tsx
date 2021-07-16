@@ -114,10 +114,7 @@ export const ContactForm: React.FC = () => {
       };
       try {
         await axios
-          .post(
-            'https://api-cv-mail.herokuapp.com/contact',
-            objectMessage
-          )
+          .post("https://api-cv-mail.herokuapp.com/api/contact", objectMessage)
           .then((response: AxiosResponse) => {
             if (response.status === 201) {
               setSend(true);
@@ -125,7 +122,7 @@ export const ContactForm: React.FC = () => {
             }
           });
       } catch (error) {
-        console.log(error);
+        console.log("backend crashed :( ", error);
         setProgress(false);
       }
     }
