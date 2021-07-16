@@ -115,7 +115,7 @@ export const ContactForm: React.FC = () => {
       try {
         await axios
           .post(
-            `https://api-cv-mail.herokuapp.com/api/contact`,
+            'https://api-cv-mail.herokuapp.com/',
             objectMessage
           )
           .then((response: AxiosResponse) => {
