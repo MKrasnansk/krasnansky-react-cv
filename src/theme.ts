@@ -1,7 +1,7 @@
-import { createTheme } from "@material-ui/core";
 import { teal } from "@material-ui/core/colors";
+import { createTheme } from "@material-ui/core";
 
-export const theme = createTheme({
+const theme = createTheme({
     palette: {
       primary: {
         main: "#ccc",
@@ -16,3 +16,4 @@ export const theme = createTheme({
       }
     },
   });
+  export default theme
