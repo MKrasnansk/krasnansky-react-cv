@@ -1,7 +1,8 @@
 import { teal } from "@material-ui/core/colors";
-import { createTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from '@material-ui/core/styles';
 
-export const theme = createTheme({
+
+export const theme = createMuiTheme({
     palette: {
       primary: {
         main: "#ccc",
