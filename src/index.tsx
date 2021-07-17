@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 
 ReactDOM.render(
   <StrictMode>
-    <App />,
+    <App />
 </StrictMode>,
   document.getElementById("root")
 );
