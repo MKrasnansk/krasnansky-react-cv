@@ -9,17 +9,16 @@ interface Activity {
   time: string;
   temp: string;
 }
+const id = String(process.env.REACT_APP_STRAVA_ID);
+const secret = process.env.REACT_APP_STRAVA_SECRET;
+const refreshToken = process.env.REACT_APP_STRAVA_REFRESH_TOKEN;
+const accessToken = process.env.REACT_APP_STRAVA_ACCESS_TOKEN
+const auth_link = "https://www.strava.com/oauth/token";
+const activities_link =
+  "https://www.strava.com/api/v3/athlete/activities";
 
 export const StravaApi: React.FC = () => {
   const [activities, setActivites] = useState<Activity[]>([]);
-  const id: string = "68395";
-  const secret: string = "f77ddbde60076ffb1398c105c7290d60c82cc249";
-  const code: string = "062ae18cf898b54ab38c8d109a0d09bca86aec43";
-  const refreshToken: string = "9a1b1f9114a5588294bf1599f31e7c938b490759";
-  const accessToken: string = '79f64e8c5252336750a1e65f65ede2679383f984 '
-  const auth_link: string = "https://www.strava.com/oauth/token";
-  const activities_link: string =
-    "https://www.strava.com/api/v3/athlete/activities";
   useEffect(() => {
     async function fetchData() {
       const stravaAuthResponse = await axios.all([
