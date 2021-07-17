@@ -1,26 +1,12 @@
-import {
-  Card,
-  CardContent,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Card, CardContent, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 
 const useStyles = makeStyles({
   root: {
-      textAlign: 'center',
-      background: "#2f2f2f",
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
+    fontSize: "10px",
+    maxWidth: "100px",
+    textAlign: "center",
+    background: "#2f2f2f",
   },
 });
 
@@ -36,25 +22,19 @@ export const ActivityComponent: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   return (
-      <Card className={classes.root}>
-        <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            {type}
-          </Typography>
-          <Typography variant="h5" component="h2">
-            {distance}
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-            {time}
-          </Typography>
-          <Typography variant="body2" component="p">
-            {temp}
-          </Typography>
-        </CardContent>
-      </Card>
+    <Card className={classes.root}>
+      <CardContent>
+        <Typography variant="caption">{type}</Typography> <br />
+        <Typography variant="caption" color="error">
+          {distance}
+        </Typography>{" "}
+        <br />
+        <Typography variant="caption">{time}</Typography>
+        <br />
+        <Typography variant="caption" color="error">
+          {temp}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };

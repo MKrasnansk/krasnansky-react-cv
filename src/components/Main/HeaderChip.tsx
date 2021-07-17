@@ -2,7 +2,7 @@ import React from "react";
 import Chip from "@material-ui/core/Chip";
 import Grid from "@material-ui/core/Grid";
 
-const HeaderChip: React.FC = () => {
+export const HeaderChip: React.FC = () => {
 
   return (
     <div>
@@ -164,4 +164,3 @@ const HeaderChip: React.FC = () => {
   );
 };
 
-export default HeaderChip;

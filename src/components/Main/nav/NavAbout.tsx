@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -8,44 +7,29 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
-  createStyles,
+  Container,
   Dialog,
   DialogContent,
   Grid,
-  makeStyles,
-  Theme,
-  Typography,
+   Typography,
   useMediaQuery,
-  useTheme,
 } from "@material-ui/core";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
+import React, { useState } from "react";
+import { theme } from "../../../theme";
 import { About } from "../About";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      minWidth: "lg",
-      background: "#2f2f2f",
-      flexGrow: 1,
-      marginTop: 10,
-    },
-  })
-);
 export const NavAbout: React.FC = () => {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  const [open, setOpen] = useState(false);
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
   return (
-    <Grid container>
+    <Container>
       <Dialog
         fullScreen={fullScreen}
         open={open}
@@ -57,13 +41,13 @@ export const NavAbout: React.FC = () => {
           <About />
         </DialogContent>
         <Button onClick={handleClose} color="primary" autoFocus>
-            Ok
-          </Button>
+          Ok
+        </Button>
       </Dialog>
-      <Card className={classes.root}>
+      <Card style={{ background: theme.palette.text.disabled, marginBottom: '10px' }}>
         <CardActionArea>
           <CardContent>
-            <Accordion className={classes.root}>
+            <Accordion style={{ background: "none" }}>
               <AccordionSummary
                 expandIcon={<FingerprintIcon color="secondary" />}
                 aria-controls="panel1a-content"
@@ -75,7 +59,7 @@ export const NavAbout: React.FC = () => {
                   </Typography>
                 </Grid>
                 <Typography component="h4">
-                  I am junior fulstack developer{" "}
+                  Junior web developer{" "}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -90,6 +74,6 @@ export const NavAbout: React.FC = () => {
           </Button>
         </CardActions>
       </Card>
-    </Grid>
+    </Container>
   );
 };

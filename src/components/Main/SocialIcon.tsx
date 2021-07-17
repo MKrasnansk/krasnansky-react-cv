@@ -8,7 +8,7 @@ import { StravaIcon } from "./StravaIcon";
 export const SocialIcon: React.FC = () => {
   return (
     <Grid container item xs={12} justify="center">
-        <Box style={{ marginTop: 10, position: "absolute" }}>
+        <Box style={{  position: "relative" }}>
           <Fab
             href={"https://www.facebook.com/miso.krasnansky/"}
             size="small"

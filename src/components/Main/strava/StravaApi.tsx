@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { Container, Grid } from "@material-ui/core";
 import axios from "axios";
-import { Grid } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
 import { ActivityComponent } from "./ActivityComponent";
 interface Activity {
   id: number;
@@ -12,10 +12,9 @@ interface Activity {
 const id = String(process.env.REACT_APP_STRAVA_ID);
 const secret = process.env.REACT_APP_STRAVA_SECRET;
 const refreshToken = process.env.REACT_APP_STRAVA_REFRESH_TOKEN;
-const accessToken = process.env.REACT_APP_STRAVA_ACCESS_TOKEN
+const accessToken = process.env.REACT_APP_STRAVA_ACCESS_TOKEN;
 const auth_link = "https://www.strava.com/oauth/token";
-const activities_link =
-  "https://www.strava.com/api/v3/athlete/activities";
+const activities_link = "https://www.strava.com/api/v3/athlete/activities";
 
 export const StravaApi: React.FC = () => {
   const [activities, setActivites] = useState<Activity[]>([]);
@@ -27,6 +26,7 @@ export const StravaApi: React.FC = () => {
         ),
       ]);
       const accessFinal: string = `${stravaAuthResponse[0].data.access_token}`;
+      // eslint-disable-next-line
       const accessRefresh = await axios.post(
         `${auth_link}?access_token=${accessFinal}&client_id=${id}&client_secret=${secret}&refresh_token=${refreshToken}&grant_type=refresh_token`
       );
@@ -55,16 +55,18 @@ export const StravaApi: React.FC = () => {
     fetchData();
   }, []);
   return (
-    <Grid container direction="row" spacing={4} justify="center">
-      {activities.map((move) => (
-        <ActivityComponent
-          key={move.id}
-          type={move.type}
-          distance={move.distance}
-          temp={move.temp}
-          time={move.time}
-        />
-      ))}
-    </Grid>
+    <Container maxWidth="xs">
+      <Grid container direction="row" spacing={4} justify="center">
+        {activities.map((move) => (
+          <ActivityComponent
+            key={move.id}
+            type={move.type}
+            distance={move.distance}
+            temp={move.temp}
+            time={move.time}
+          />
+        ))}
+      </Grid>
+    </Container>
   );
 };

@@ -1,25 +1,8 @@
-html {
-  background-color: #272727;
-}
 .App {
-  header {
-    top: 0px;
-  }
-  body {
-    ::selection  {
-      color: #ccc;
-      background: #333;
-    }
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: rgb(184, 184, 184);
-  }
-  footer {
-    bottom: 0px;
+  background-color: #272727;
+  ::selection  {
+    color: #ccc;
+    background: #333;
   }
 }
-h1 {
-  margin: 0.2rem;
-}
+

@@ -8,34 +8,20 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
-  createStyles,
+  Container,
   Dialog,
   DialogContent,
   Grid,
-  makeStyles,
-  Theme,
   Typography,
   useMediaQuery,
-  useTheme,
 } from "@material-ui/core";
 import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify";
 import { Curiculum } from "../Curiculum";
+import { theme } from "../../../theme";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      minWidth: "lg",
-      background: "#2f2f2f",
-      flexGrow: 1,
-      marginTop: 10,
-    },
-  })
-);
 export const NavCv: React.FC = () => {
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const fullScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -45,7 +31,7 @@ export const NavCv: React.FC = () => {
     setOpen(false);
   };
   return (
-    <Grid container>
+    <Container>
       <Dialog
         fullScreen={fullScreen}
         open={open}
@@ -60,10 +46,10 @@ export const NavCv: React.FC = () => {
           Ok
         </Button>
       </Dialog>
-      <Card className={classes.root}>
+      <Card style={{ background: theme.palette.text.disabled, marginBottom: '10px' }}>
         <CardActionArea>
           <CardContent>
-            <Accordion className={classes.root}>
+            <Accordion style={{ background: "none" }}>
               <AccordionSummary
                 expandIcon={<FormatAlignJustifyIcon color="secondary" />}
                 aria-controls="panel1a-content"
@@ -74,7 +60,7 @@ export const NavCv: React.FC = () => {
                     Zivotopis
                   </Typography>
                 </Grid>
-                <Typography component="h4">My Curriculum vitae</Typography>
+                <Typography component="h4">Curriculum vitae</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Curiculum />
@@ -88,6 +74,6 @@ export const NavCv: React.FC = () => {
           </Button>
         </CardActions>
       </Card>
-    </Grid>
+    </Container>
   );
 };

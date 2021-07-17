@@ -6,6 +6,7 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import {
   Button,
   CircularProgress,
+  Container,
   FormControl,
   Icon,
   InputAdornment,
@@ -128,130 +129,137 @@ export const ContactForm: React.FC = () => {
     }
   };
   return (
-    <Grid container alignContent="center" alignItems="center">
-      <form
-        id="form"
-        name="sendMessageForm"
-        onSubmit={handleOnSubmit}
-        className={classes.ful}
-        noValidate
-        autoComplete="off"
-      >
-        <FormControl className={classes.root} required fullWidth size="medium">
-          <TextField
-            disabled={send ? true : false}
-            className={classes.err}
-            helperText={required ? "This field is required!" : ""}
-            type="text"
-            value={name}
-            onChange={handleName}
-            label="Name"
-            id="username"
-            InputProps={{
-              className: classes.color,
-              startAdornment: (
-                <InputAdornment position="start">
-                  {name.length < 2 ? (
-                    <CancelIcon color="primary" />
-                  ) : (
-                    <CheckCircleIcon color="secondary" />
-                  )}
-                </InputAdornment>
-              ),
-            }}
-          ></TextField>
-          <TextField
-            disabled={send ? true : false}
-            className={classes.err}
-            helperText={required ? "Email is not vallid!" : ""}
-            type="email"
-            value={email}
-            onChange={handleEmail}
+    <Container>
+      <Grid container alignContent="center" alignItems="center">
+        <form
+          id="form"
+          name="sendMessageForm"
+          onSubmit={handleOnSubmit}
+          className={classes.ful}
+          noValidate
+          autoComplete="off"
+        >
+          <FormControl
+            className={classes.root}
             required
-            label="E-mail"
-            id="email"
-            InputProps={{
-              className: classes.color,
-              startAdornment: (
-                <InputAdornment position="start">
-                  {errEmail ? (
-                    <CancelIcon color="primary" />
-                  ) : (
-                    <CheckCircleIcon color="secondary" />
-                  )}
-                </InputAdornment>
-              ),
-            }}
-          ></TextField>
-          <TextField
-            disabled={send ? true : false}
-            className={classes.err}
-            helperText={required ? "This field is required!" : ""}
-            type="text"
-            onChange={handleSubject}
-            value={subject}
-            required
-            label="Subject"
-            id="subject"
-            InputProps={{
-              className: classes.color,
-              startAdornment: (
-                <InputAdornment position="start">
-                  {errSubject ? (
-                    <CancelIcon color="primary" />
-                  ) : (
-                    <CheckCircleIcon color="secondary" />
-                  )}
-                </InputAdornment>
-              ),
-            }}
-          ></TextField>
-          <TextField
-            disabled={send ? true : false}
-            className={classes.err}
-            helperText={required ? "This field is required!" : ""}
-            type="textarea"
-            onChange={handleMessage}
-            value={message}
-            required
-            label="Message"
-            multiline
-            rows={3}
-            rowsMax={5}
-            InputProps={{
-              className: classes.color,
-              startAdornment: (
-                <InputAdornment position="start">
-                  {errMessage ? (
-                    <CancelIcon color="primary" />
-                  ) : (
-                    <CheckCircleIcon color="secondary" />
-                  )}
-                </InputAdornment>
-              ),
-            }}
-          />
-
-          <Button
-            type="submit"
-            variant="outlined"
-            color="primary"
-            disabled={send ? true : false}
-            endIcon={
-              send ? <CheckCircleIcon color="secondary" /> : <Icon>send</Icon>
-            }
+            fullWidth
+            size="medium"
           >
-            {progress ? (
-              <div className={classes.progress}>
-                <CircularProgress size={30} color="secondary" />
-              </div>
-            ) : (
-              ""
-            )}
-            Send
-          </Button>
-        </FormControl>
-      </form>
-    </Grid>
+            <TextField
+              disabled={send ? true : false}
+              className={classes.err}
+              helperText={required ? "This field is required!" : ""}
+              type="text"
+              value={name}
+              onChange={handleName}
+              label="Name"
+              id="username"
+              InputProps={{
+                className: classes.color,
+                startAdornment: (
+                  <InputAdornment position="start">
+                    {name.length < 2 ? (
+                      <CancelIcon color="primary" />
+                    ) : (
+                      <CheckCircleIcon color="secondary" />
+                    )}
+                  </InputAdornment>
+                ),
+              }}
+            ></TextField>
+            <TextField
+              disabled={send ? true : false}
+              className={classes.err}
+              helperText={required ? "Email is not vallid!" : ""}
+              type="email"
+              value={email}
+              onChange={handleEmail}
+              required
+              label="E-mail"
+              id="email"
+              InputProps={{
+                className: classes.color,
+                startAdornment: (
+                  <InputAdornment position="start">
+                    {errEmail ? (
+                      <CancelIcon color="primary" />
+                    ) : (
+                      <CheckCircleIcon color="secondary" />
+                    )}
+                  </InputAdornment>
+                ),
+              }}
+            ></TextField>
+            <TextField
+              disabled={send ? true : false}
+              className={classes.err}
+              helperText={required ? "This field is required!" : ""}
+              type="text"
+              onChange={handleSubject}
+              value={subject}
+              required
+              label="Subject"
+              id="subject"
+              InputProps={{
+                className: classes.color,
+                startAdornment: (
+                  <InputAdornment position="start">
+                    {errSubject ? (
+                      <CancelIcon color="primary" />
+                    ) : (
+                      <CheckCircleIcon color="secondary" />
+                    )}
+                  </InputAdornment>
+                ),
+              }}
+            ></TextField>
+            <TextField
+              disabled={send ? true : false}
+              className={classes.err}
+              helperText={required ? "This field is required!" : ""}
+              type="textarea"
+              onChange={handleMessage}
+              value={message}
+              required
+              label="Message"
+              multiline
+              rows={3}
+              rowsMax={5}
+              InputProps={{
+                className: classes.color,
+                startAdornment: (
+                  <InputAdornment position="start">
+                    {errMessage ? (
+                      <CancelIcon color="primary" />
+                    ) : (
+                      <CheckCircleIcon color="secondary" />
+                    )}
+                  </InputAdornment>
+                ),
+              }}
+            />
+
+            <Button
+              type="submit"
+              variant="outlined"
+              color="primary"
+              disabled={send ? true : false}
+              endIcon={
+                send ? <CheckCircleIcon color="secondary" /> : <Icon>send</Icon>
+              }
+            >
+              {progress ? (
+                <div className={classes.progress}>
+                  <CircularProgress size={30} color="secondary" />
+                </div>
+              ) : (
+                ""
+              )}
+              Send
+            </Button>
+          </FormControl>
+        </form>
+      </Grid>
+    </Container>
   );
 };

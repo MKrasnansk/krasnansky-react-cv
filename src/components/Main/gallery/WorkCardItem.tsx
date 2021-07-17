@@ -1,35 +1,18 @@
-import React, { useState } from "react";
 import {
   Button,
   Card,
   CardActionArea,
   CardActions,
   CardContent,
-  createStyles,
   Dialog,
   DialogContent,
   Grid,
-  makeStyles,
-  Theme,
   Typography,
-  useMediaQuery,
-  useTheme,
+  useMediaQuery
 } from "@material-ui/core";
+import React, { useState } from "react";
+import { theme } from "../../../theme";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexDirection: "column",
-      maxWidth: 200,
-      marginBlock: 20,
-      marginInline: 10,
-      background: "#2f2f2f",
-    },
-    media: {
-      height: 100,
-    },
-  })
-);
 interface Props {
   title: string;
   info: string;
@@ -40,20 +23,22 @@ interface Props {
 export const WorkCardItem: React.FC<Props> = (props) => {
   const { title, info, describe, source, demo } = props;
   const [open, setOpen] = useState(false);
-  const classes = useStyles();
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
-    <Card className={classes.root}>
+    <Card
+      style={{
+        maxWidth: "200px",
+        background: theme.palette.text.disabled,
+        marginBlock: "10px",
+        marginInline: "5px",
+      }}
+    >
       <Dialog
         fullScreen={fullScreen}
         open={open}
@@ -61,7 +46,12 @@ export const WorkCardItem: React.FC<Props> = (props) => {
         aria-labelledby="responsive-dialog-title"
         scroll="paper"
       >
-        <DialogContent style={{ background: "#2f2f2f", color: "#ccc" }}>
+        <DialogContent
+          style={{
+            background: theme.palette.text.disabled,
+            color: theme.palette.primary.main,
+          }}
+        >
           <h3>{title}</h3>
           <p>{describe}</p>
           <Grid container direction="row-reverse">
@@ -83,7 +73,7 @@ export const WorkCardItem: React.FC<Props> = (props) => {
         </DialogContent>
         <Button
           onClick={handleClose}
-          style={{ background: "#333" }}
+          style={{ background: theme.palette.text.disabled }}
           variant="contained"
           autoFocus
         >

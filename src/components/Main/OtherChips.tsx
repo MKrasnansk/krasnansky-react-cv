@@ -1,6 +1,5 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import Chip from "@material-ui/core/Chip";
+import {Grid, Chip } from "@material-ui/core";
 export const OtherChips: React.FC = () => {
   return (
     <Grid
