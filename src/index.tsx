@@ -1,13 +1,10 @@
 import * as React from "react";
-import { App } from "./App";
 import ReactDOM from "react-dom";
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
-import { theme } from "./theme";
+import { App } from "./App";
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
+  <React.StrictMode>
     <App />
-  </ThemeProvider>,
+  </React.StrictMode>,
   document.getElementById("root")
 );
