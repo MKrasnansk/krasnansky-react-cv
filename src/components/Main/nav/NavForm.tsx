@@ -20,28 +20,28 @@ import { ContactForm } from "../ContactForm";
 import { theme } from "../../../theme";
 
 export const NavForm: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
+  const [openForm, setOpenForm] = React.useState(false);
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpenForm = () => {
+    setOpenForm(true);
   };
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseForm = () => {
+    setOpenForm(false);
   };
   return (
     <>
       <Container>
         <Dialog
           fullScreen={fullScreen}
-          open={open}
-          onClose={handleClose}
+          open={openForm}
+          onClose={handleCloseForm}
           aria-labelledby="responsive-dialog-title"
           scroll="paper"
         >
           <DialogContent style={{ background: "#2f2f2f" }}>
             <ContactForm />
           </DialogContent>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={handleCloseForm} color="primary" autoFocus>
             Close
           </Button>
         </Dialog>
@@ -75,7 +75,7 @@ export const NavForm: React.FC = () => {
             </Accordion>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpen}>
+            <Button size="small" color="primary" onClick={handleClickOpenForm}>
               Explore content
             </Button>
           </CardActions>

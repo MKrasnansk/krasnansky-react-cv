@@ -20,28 +20,28 @@ import { theme } from "../../../theme";
 import { About } from "../About";
 
 export const NavAbout: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpenNav = () => {
+    setOpenNav(true);
   };
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseNav = () => {
+    setOpenNav(false);
   };
   return (
     <>
       <Container>
         <Dialog
           fullScreen={fullScreen}
-          open={open}
-          onClose={handleClose}
+          open={openNav}
+          onClose={handleCloseNav}
           aria-labelledby="responsive-dialog-title"
           scroll="paper"
         >
           <DialogContent style={{ background: "#2f2f2f" }}>
             <About />
           </DialogContent>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={handleCloseNav} color="primary" autoFocus>
             Ok
           </Button>
         </Dialog>
@@ -73,7 +73,7 @@ export const NavAbout: React.FC = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpen}>
+            <Button size="small" color="primary" onClick={handleClickOpenNav}>
               Explore content
             </Button>
           </CardActions>

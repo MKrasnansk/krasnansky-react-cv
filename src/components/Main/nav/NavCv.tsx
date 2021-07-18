@@ -20,30 +20,30 @@ import { Curiculum } from "../Curiculum";
 import { theme } from "../../../theme";
 
 export const NavCv: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
+  const [openCv, setOpenCv] = React.useState(false);
   const fullScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpenCv = () => {
+    setOpenCv(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseCv = () => {
+    setOpenCv(false);
   };
   return (
     <>
       <Container>
         <Dialog
           fullScreen={fullScreen}
-          open={open}
-          onClose={handleClose}
+          open={openCv}
+          onClose={handleCloseCv}
           aria-labelledby="responsive-dialog-title"
           scroll="paper"
         >
           <DialogContent style={{ background: "#2f2f2f" }}>
             <Curiculum />
           </DialogContent>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={handleCloseCv} color="primary" autoFocus>
             Ok
           </Button>
         </Dialog>
@@ -75,7 +75,7 @@ export const NavCv: React.FC = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpen}>
+            <Button size="small" color="primary" onClick={handleClickOpenCv}>
               Explore content
             </Button>
           </CardActions>
