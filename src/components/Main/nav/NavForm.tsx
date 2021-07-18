@@ -29,6 +29,7 @@ export const NavForm: React.FC = () => {
     setOpen(false);
   };
   return (
+    <>
       <Container>
         <Dialog
           fullScreen={fullScreen}
@@ -44,9 +45,14 @@ export const NavForm: React.FC = () => {
             Close
           </Button>
         </Dialog>
-        <Card  style={{background: theme.palette.text.disabled, marginBottom: '10px'}}>
+        <Card
+          style={{
+            background: theme.palette.text.disabled,
+            marginBottom: "10px",
+          }}
+        >
           <CardContent>
-            <Accordion style={{background: 'none'}}>
+            <Accordion style={{ background: "none" }}>
               <CardActionArea>
                 <AccordionSummary
                   expandIcon={<FormatListBulletedIcon color="secondary" />}
@@ -75,5 +81,6 @@ export const NavForm: React.FC = () => {
           </CardActions>
         </Card>
       </Container>
+    </>
   );
 };

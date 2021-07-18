@@ -15,6 +15,7 @@ import { WorkExperience } from "./Main/WorkExperience";
 
 export const MainLayout: React.FC = () => {
   return (
+    <>
     <Container>
       <Box bgcolor="text.secondary">
         <main>
@@ -39,5 +40,6 @@ export const MainLayout: React.FC = () => {
         </footer>
       </Box>
     </Container>
+    </>
   );
 };

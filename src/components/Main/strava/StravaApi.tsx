@@ -55,18 +55,20 @@ export const StravaApi: React.FC = () => {
     fetchData();
   }, []);
   return (
-    <Container maxWidth="xs">
-      <Grid container direction="row" spacing={4} justify="center">
-        {activities.map((move) => (
-          <ActivityComponent
-            key={move.id}
-            type={move.type}
-            distance={move.distance}
-            temp={move.temp}
-            time={move.time}
-          />
-        ))}
-      </Grid>
-    </Container>
+    <>
+      <Container maxWidth="xs">
+        <Grid container direction="row" spacing={4} justify="center">
+          {activities.map((move) => (
+            <ActivityComponent
+              key={move.id}
+              type={move.type}
+              distance={move.distance}
+              temp={move.temp}
+              time={move.time}
+            />
+          ))}
+        </Grid>
+      </Container>
+    </>
   );
 };

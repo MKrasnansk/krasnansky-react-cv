@@ -22,19 +22,21 @@ export const ActivityComponent: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="caption">{type}</Typography> <br />
-        <Typography variant="caption" color="error">
-          {distance}
-        </Typography>{" "}
-        <br />
-        <Typography variant="caption">{time}</Typography>
-        <br />
-        <Typography variant="caption" color="error">
-          {temp}
-        </Typography>
-      </CardContent>
-    </Card>
+    <>
+      <Card className={classes.root}>
+        <CardContent>
+          <Typography variant="caption">{type}</Typography> <br />
+          <Typography variant="caption" color="error">
+            {distance}
+          </Typography>{" "}
+          <br />
+          <Typography variant="caption">{time}</Typography>
+          <br />
+          <Typography variant="caption" color="error">
+            {temp}
+          </Typography>
+        </CardContent>
+      </Card>
+    </>
   );
 };

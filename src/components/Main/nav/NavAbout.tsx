@@ -11,7 +11,7 @@ import {
   Dialog,
   DialogContent,
   Grid,
-   Typography,
+  Typography,
   useMediaQuery,
 } from "@material-ui/core";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
@@ -29,51 +29,56 @@ export const NavAbout: React.FC = () => {
     setOpen(false);
   };
   return (
-    <Container>
-      <Dialog
-        fullScreen={fullScreen}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="responsive-dialog-title"
-        scroll="paper"
-      >
-        <DialogContent style={{ background: "#2f2f2f" }}>
-          <About />
-        </DialogContent>
-        <Button onClick={handleClose} color="primary" autoFocus>
-          Ok
-        </Button>
-      </Dialog>
-      <Card style={{ background: theme.palette.text.disabled, marginBottom: '10px' }}>
-        <CardActionArea>
-          <CardContent>
-            <Accordion style={{ background: "none" }}>
-              <AccordionSummary
-                expandIcon={<FingerprintIcon color="secondary" />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Grid container direction="row">
-                  <Typography variant="h5" component="h2">
-                    About me
-                  </Typography>
-                </Grid>
-                <Typography component="h4">
-                  Junior web developer{" "}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <About />
-              </AccordionDetails>
-            </Accordion>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary" onClick={handleClickOpen}>
-            Explore content
+    <>
+      <Container>
+        <Dialog
+          fullScreen={fullScreen}
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="responsive-dialog-title"
+          scroll="paper"
+        >
+          <DialogContent style={{ background: "#2f2f2f" }}>
+            <About />
+          </DialogContent>
+          <Button onClick={handleClose} color="primary" autoFocus>
+            Ok
           </Button>
-        </CardActions>
-      </Card>
-    </Container>
+        </Dialog>
+        <Card
+          style={{
+            background: theme.palette.text.disabled,
+            marginBottom: "10px",
+          }}
+        >
+          <CardActionArea>
+            <CardContent>
+              <Accordion style={{ background: "none" }}>
+                <AccordionSummary
+                  expandIcon={<FingerprintIcon color="secondary" />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Grid container direction="row">
+                    <Typography variant="h5" component="h2">
+                      About me
+                    </Typography>
+                  </Grid>
+                  <Typography component="h4">Junior web developer </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <About />
+                </AccordionDetails>
+              </Accordion>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary" onClick={handleClickOpen}>
+              Explore content
+            </Button>
+          </CardActions>
+        </Card>
+      </Container>
+    </>
   );
 };

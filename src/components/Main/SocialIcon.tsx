@@ -1,5 +1,5 @@
 import React from "react";
-import {  Box, Fab, Grid } from "@material-ui/core";
+import { Box, Fab, Grid } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -7,8 +7,9 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { StravaIcon } from "./StravaIcon";
 export const SocialIcon: React.FC = () => {
   return (
-    <Grid container item xs={12} justify="center">
-        <Box style={{  position: "relative" }}>
+    <>
+      <Grid container item xs={12} justifyContent="center">
+        <Box style={{ position: "relative" }}>
           <Fab
             href={"https://www.facebook.com/miso.krasnansky/"}
             size="small"
@@ -43,6 +44,7 @@ export const SocialIcon: React.FC = () => {
             <GitHubIcon />
           </Fab>
         </Box>
-    </Grid>
+      </Grid>
+    </>
   );
 };

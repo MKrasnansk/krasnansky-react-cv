@@ -5,10 +5,10 @@ import { NavForm } from "./NavForm";
 
 export const Nav: React.FC = () => {
   return (
-    <div>
+    <>
       <NavAbout />
       <NavCv />
       <NavForm />
-    </div>
+    </>
   );
 };

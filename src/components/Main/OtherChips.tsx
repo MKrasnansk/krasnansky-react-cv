@@ -2,13 +2,13 @@ import React from "react";
 import {Grid, Chip } from "@material-ui/core";
 export const OtherChips: React.FC = () => {
   return (
+    <>
     <Grid
       style={{ padding: 20 }}
       spacing={2}
       container={true}
       direction="row"
-      justify="space-evenly"
-      alignItems="center"
+      justifyContent="center"
     >
       <Chip
         variant="outlined"
@@ -151,6 +151,7 @@ export const OtherChips: React.FC = () => {
         clickable={true}
       />
     </Grid>
+    </>
   );
 };
 

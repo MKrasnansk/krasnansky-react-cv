@@ -5,12 +5,12 @@ import Grid from "@material-ui/core/Grid";
 export const HeaderChip: React.FC = () => {
 
   return (
-    <div>
+    <>
       <Grid
         style={{ marginTop: 30, marginBottom: 10 }}
-        container={true}
+        container
         direction="row"
-        justify="space-evenly"
+        justifyContent='center'
         alignItems="center"
       >
         <Chip
@@ -18,136 +18,118 @@ export const HeaderChip: React.FC = () => {
           size="medium"
           color="primary"
           variant="outlined"
-          clickable={true}
         />
         <div>
-          <Grid container direction="row" justify="center" alignItems="center">
+          <Grid container direction="row" justifyContent="center" >
             <Chip
               variant="outlined"
               size="small"
               label="React.js"
               color="primary"
-              clickable={true}
             />
             <Chip
               variant="outlined"
               size="small"
               label="JavaScript"
               color="primary"
-              clickable={true}
             />
             <Chip
               variant="outlined"
               size="small"
               label="TypeScript"
               color="primary"
-              clickable={true}
             />
                <Chip
               variant="outlined"
               size="small"
               label="Vue.js"
               color="primary"
-              clickable={true}
             />
           </Grid>
-          <Grid container direction="row" justify="center" alignItems="center">
+          <Grid container direction="row" justify="center" >
           <Chip
               variant="outlined"
               size="small"
               label="TypeScript"
               color="secondary"
-              clickable={true}
             />
             <Chip
               variant="outlined"
               size="small"
               label="Node.js"
               color="secondary"
-              clickable={true}
             />
             <Chip
               variant="outlined"
               size="small"
               label="NestJS"
               color="secondary"
-              clickable={true}
             />
               <Chip
               variant="outlined"
               size="small"
               label="Pug"
               color="secondary"
-              clickable={true}
             />
           
           </Grid>
-          <Grid container direction="row" justify="center" alignItems="center">
+          <Grid container direction="row" justify="center" >
           <Chip
               label="CSS"
               size="small"
               variant="outlined"
               color="primary"
-              clickable={true}
             />
             <Chip
               variant="outlined"
               size="small"
               label="Sass"
               color="primary"
-              clickable={true}
             />
                <Chip
               variant="outlined"
               size="small"
               label="Bootstrap"
               color="primary"
-              clickable={true}
             />
                <Chip
               variant="outlined"
               size="small"
               label="Material-UI"
               color="primary"
-              clickable={true}
             />
          
           </Grid>
-          <Grid container direction="row" justify="center" alignItems="center">
+          <Grid container direction="row" justify="center" >
           <Chip
               variant="outlined"
               size="small"
               color="secondary"
               label="MongoDB"
-              clickable={true}
             />
             <Chip
               variant="outlined"
               size="small"
               color="secondary"
               label="Firebase"
-              clickable={true}
             />
             <Chip
               variant="outlined"
               size="small"
               color="secondary"
               label="MySQL"
-              clickable={true}
             />
             <Chip
               label="PostgreSQL"
               size="small"
               color="secondary"
               variant="outlined"
-              clickable={true}
             />
                 <Chip
               label="GraphQL"
               size="small"
               color="secondary"
               variant="outlined"
-              clickable={true}
             />
           </Grid>
         </div>
@@ -157,10 +139,9 @@ export const HeaderChip: React.FC = () => {
           size="medium"
           color="secondary"
           variant="outlined"
-          clickable={true}
         />
       </Grid>
-    </div>
+    </>
   );
 };
 
