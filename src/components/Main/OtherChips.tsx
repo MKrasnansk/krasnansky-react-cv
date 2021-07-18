@@ -1,155 +1,22 @@
 import React from "react";
 import {Grid, Chip } from "@material-ui/core";
+import { OtherChipsData } from "../../assets/otherChips";
 export const OtherChips: React.FC = () => {
   return (
     <>
     <Grid
-      style={{ padding: 20 }}
-      spacing={2}
-      container={true}
-      direction="row"
+      container
       justifyContent="center"
     >
-      <Chip
-        variant="outlined"
-        size="small"
-        label="3ds Max"
-        color="default"
-        clickable={true}
-      />
-       <Chip
-        variant="outlined"
-        size="small"
-        label="Vuetify"
-        color="default"
-        clickable={true}
-      />
+       {OtherChipsData.map((chip) => (
           <Chip
-        variant="outlined"
-        size="small"
-        label="Quasar framework"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Photoshop"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Illustrator"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Angular"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="HTML5"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Git"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="GitLab"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="GitHub"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="JIRA"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Yarn or Npm"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Webpack"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Express"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Mongoose"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Nodemon"
-        color="default"
-        clickable={true}
-      />
-      <Chip
-        variant="outlined"
-        size="small"
-        label="Ejs"
-        color="default"
-        clickable={true}
-      />
-        <Chip
-        variant="outlined"
-        size="small"
-        label="Swagger"
-        color="default"
-        clickable={true}
-      />
-        <Chip
-        variant="outlined"
-        size="small"
-        label="Postman"
-        color="default"
-        clickable={true}
-      />
-         <Chip
-        variant="outlined"
-        size="small"
-        label="Docker"
-        color="default"
-        clickable={true}
-      />
+            key={chip.id}
+            variant="outlined"
+            size="small"
+            label={chip.label}
+            color="default"
+          />
+        ))}
     </Grid>
     </>
   );

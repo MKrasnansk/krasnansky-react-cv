@@ -13,7 +13,7 @@ export const Fffoter: React.FC = () => {
       <AppBar style={{ background: "none" }} position="static" color="primary">
         <Container maxWidth="md">
           <Toolbar>
-            <Grid direction="row">
+            <Grid container direction="row">
               <Typography variant="caption" color="inherit">
                 © 2021 Júl | mailtrap | Strava API | Michal Krasňanský
               </Typography>

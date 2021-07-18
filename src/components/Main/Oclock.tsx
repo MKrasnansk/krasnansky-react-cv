@@ -16,7 +16,7 @@ export const Oclock: React.FC = () => {
           <Grid
             style={{ padding: 0, margin: 0 }}
             container
-            justify="flex-end"
+            justifyContent="flex-end"
             alignItems="flex-end"
             direction="column"
           >

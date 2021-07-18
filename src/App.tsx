@@ -4,18 +4,15 @@ import "./App.scss";
 import { MainLayout } from "./components/MainLayout";
 import { theme } from "./theme";
 
-
 export const App: React.FC = () => {
   return (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Box bgcolor="text.disabled">
-      <body className="App">
-        <MainLayout />
-      </body>
-    </Box>
-  </ThemeProvider>
-
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box bgcolor="text.disabled">
+        <div className="App">
+          <MainLayout />
+        </div>
+      </Box>
+    </ThemeProvider>
   );
 };
-

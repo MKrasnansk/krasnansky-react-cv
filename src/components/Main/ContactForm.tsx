@@ -224,8 +224,7 @@ export const ContactForm: React.FC = () => {
                 required
                 label="Message"
                 multiline
-                rows={3}
-                rowsMax={5}
+                maxRows={5}
                 InputProps={{
                   className: classes.color,
                   startAdornment: (

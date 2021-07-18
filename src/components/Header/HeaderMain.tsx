@@ -10,17 +10,17 @@ export const HeaderMain: React.FC = () => {
       <Container>
         <Grid
           container
-          justify="flex-start"
+          justifyContent="flex-start"
           alignItems="center"
           direction="row"
         >
-          <h4 style={{ color: theme.palette.text.hint }}>
+          <h4 style={{ color: theme.palette.text.primary }}>
             Hello, I am Michal. <br />
             I am from Bratislava and I very love work with computers. <br />I
             love football, running and people like me with the same hobbies.
           </h4>
         </Grid>
-        <Grid container justify="center" alignItems="center" direction="row">
+        <Grid container justifyContent="center" alignItems="center" direction="row">
           <h2
             style={{ color: theme.palette.secondary.main, textAlign: "center" }}
           >

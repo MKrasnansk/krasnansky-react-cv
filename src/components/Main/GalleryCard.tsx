@@ -10,7 +10,7 @@ export const GalleryCard: React.FC = () => {
       <Grid
         container={true}
         direction="row"
-        justify="space-evenly"
+        justifyContent="space-evenly"
         alignItems="center"
       >
         {tileData.map((tile) => (

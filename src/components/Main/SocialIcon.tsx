@@ -13,14 +13,14 @@ export const SocialIcon: React.FC = () => {
           <Fab
             href={"https://www.facebook.com/miso.krasnansky/"}
             size="small"
-            variant="round"
+            variant="circular"
           >
             <FacebookIcon />
           </Fab>
           <Fab
             href={"https://www.instagram.com/fafo_oo/"}
             size="small"
-            variant="round"
+            variant="circular"
           >
             <InstagramIcon />
           </Fab>
@@ -32,14 +32,14 @@ export const SocialIcon: React.FC = () => {
               "https://www.linkedin.com/in/michal-kras%C5%88ansk%C3%BD-24a4b41b0/"
             }
             size="small"
-            variant="round"
+            variant="circular"
           >
             <LinkedInIcon />
           </Fab>
           <Fab
             href={"https://github.com/MKrasnansk"}
             size="small"
-            variant="round"
+            variant="circular"
           >
             <GitHubIcon />
           </Fab>

@@ -57,7 +57,7 @@ export const StravaApi: React.FC = () => {
   return (
     <>
       <Container maxWidth="xs">
-        <Grid container direction="row" spacing={4} justify="center">
+        <Grid container direction="row" spacing={4} justifyContent="center">
           {activities.map((move) => (
             <ActivityComponent
               key={move.id}
