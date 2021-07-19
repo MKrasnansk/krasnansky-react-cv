@@ -22,7 +22,6 @@ export const AboutDialog: React.FC<State> = (props) => {
         fullScreen
         open={isOpen}
         onClose={onNo}
-        onEscapeKeyDown={onNo}
         TransitionComponent={DialogTransition}
       >
         <DialogContent style={{ background: "#2f2f2f" }}>

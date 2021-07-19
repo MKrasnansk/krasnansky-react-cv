@@ -29,7 +29,6 @@ export const DialogGallery: React.FC<State> = (props) => {
       <Dialog
         open={isOpen}
         onClose={onNo}
-        onEscapeKeyDown={onNo}
         TransitionComponent={DialogTransition}
       >
         <DialogContent
