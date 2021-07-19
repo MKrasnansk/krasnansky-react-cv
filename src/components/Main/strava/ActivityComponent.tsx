@@ -15,24 +15,26 @@ interface Props {
   distance: string;
   temp: string;
   time: string;
+  date: string
 }
 
 export const ActivityComponent: React.FC<Props> = (props) => {
-  const { type, distance, temp, time } = props;
+  const { type, distance, temp, time, date } = props;
   const classes = useStyles();
 
   return (
     <>
       <Card className={classes.root}>
-        <CardContent>
-          <Typography variant="caption">{type}</Typography> <br />
-          <Typography variant="caption" color="error">
+        <CardContent style={{padding: '10px'}}>
+          <Typography variant="caption">{date}</Typography> <br />
+          <Typography  color="error" variant="caption">{type}</Typography> <br />
+          <Typography variant="caption">
             {distance}
           </Typography>{" "}
           <br />
-          <Typography variant="caption">{time}</Typography>
+          <Typography  color="error" variant="caption">{time}</Typography>
           <br />
-          <Typography variant="caption" color="error">
+          <Typography variant="caption">
             {temp}
           </Typography>
         </CardContent>

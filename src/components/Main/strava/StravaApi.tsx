@@ -8,6 +8,7 @@ interface Activity {
   distance: string;
   time: string;
   temp: string;
+  date: string
 }
 const id = String(process.env.REACT_APP_STRAVA_ID);
 const secret = process.env.REACT_APP_STRAVA_SECRET;
@@ -19,6 +20,7 @@ const activities_link = "https://www.strava.com/api/v3/athlete/activities";
 export const StravaApi: React.FC = () => {
   const [activities, setActivites] = useState<Activity[]>([]);
   useEffect(() => {
+    const matches = window.innerWidth > 760
     async function fetchData() {
       const stravaAuthResponse = await axios.all([
         axios.post(
@@ -34,8 +36,13 @@ export const StravaApi: React.FC = () => {
         `${activities_link}?access_token=${accessFinal}`
       );
       const resActivites = [];
-      for (let i = 0; i < 3; i += 1) {
+      let numberOfActivities: number = 3
+      if (matches) {
+        numberOfActivities = 7
+      }
+      for (let i = 0; i < numberOfActivities ; i += 1) {
         const id = i + 1;
+        const date = stravaActivityResponse.data[i].start_date_local.slice(0, 10)
         const type = stravaActivityResponse.data[i].type;
         const distance =
           (stravaActivityResponse.data[i].distance / 1000).toFixed(2) + " Km";
@@ -48,7 +55,7 @@ export const StravaApi: React.FC = () => {
             60 /
             (stravaActivityResponse.data[i].distance / 1000)
           ).toFixed(2) + " min/km";
-        resActivites.push({ type, distance, time, temp, id });
+        resActivites.push({ type, distance, time, temp, id, date });
       }
       setActivites(resActivites);
     }
@@ -56,11 +63,12 @@ export const StravaApi: React.FC = () => {
   }, []);
   return (
     <>
-      <Container maxWidth="xs">
+      <Container maxWidth="md">
         <Grid container direction="row" spacing={4} justifyContent="center">
           {activities.map((move) => (
             <ActivityComponent
               key={move.id}
+              date={move.date}
               type={move.type}
               distance={move.distance}
               temp={move.temp}
