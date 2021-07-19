@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   Container,
   Grid,
@@ -15,19 +13,11 @@ import {
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
 import { theme } from "../../../theme";
 import { ContactForm } from "./ContactForm";
-import { FormDialog } from "./FormDialog";
-
 
 export const NavForm: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const openDialog = () => setIsOpen(true);
-  const closeDialog = () => setIsOpen(false);
-
   return (
     <>
       <Container>
-        <FormDialog isOpen={isOpen}  onNo={closeDialog} />
         <Card
           style={{
             background: theme.palette.text.disabled,
@@ -40,7 +30,7 @@ export const NavForm: React.FC = () => {
                 <AccordionSummary
                   expandIcon={<FormatListBulletedIcon color="secondary" />}
                 >
-                  <Grid container direction="row">
+                  <Grid container alignContent="center" direction="row">
                     <Typography variant="h5" component="h2">
                       Contact form
                     </Typography>
@@ -55,11 +45,6 @@ export const NavForm: React.FC = () => {
               </AccordionDetails>
             </Accordion>
           </CardContent>
-          <CardActions>
-            <Button size="small" color="primary" onClick={openDialog}>
-              Explore form
-            </Button>
-          </CardActions>
         </Card>
       </Container>
     </>

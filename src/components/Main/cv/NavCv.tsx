@@ -37,7 +37,7 @@ export const NavCv: React.FC = () => {
                 <AccordionSummary
                   expandIcon={<FormatAlignJustifyIcon color="secondary" />}
                 >
-                  <Grid container direction="row">
+                  <Grid container alignContent='center'  direction="row">
                     <Typography variant="h5" component="h2">
                       CV
                     </Typography>

@@ -5,7 +5,6 @@ import {
   DialogContent,
   Grid,
   Button,
-  useMediaQuery,
 } from "@material-ui/core";
 import { title } from "process";
 import React from "react";
@@ -13,7 +12,7 @@ import { theme } from "../../../theme";
 
 interface State {
   isOpen: boolean;
-  onNo: () => void;
+  onNo: any;
   describe: string;
   source: string;
   demo: string;
@@ -24,12 +23,10 @@ const DialogTransition = (props: JSX.IntrinsicAttributes & SlideProps) => (
 
 export const DialogGallery: React.FC<State> = (props) => {
   const { isOpen, onNo, describe, source, demo } = props;
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
       <Dialog
-        fullScreen={fullScreen}
         open={isOpen}
         onClose={onNo}
         onEscapeKeyDown={onNo}
@@ -62,9 +59,6 @@ export const DialogGallery: React.FC<State> = (props) => {
         </DialogContent>
         <Button
           onClick={onNo}
-          style={{ background: theme.palette.text.disabled }}
-          variant="contained"
-          autoFocus
         >
           Close
         </Button>

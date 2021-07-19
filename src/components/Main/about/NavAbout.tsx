@@ -39,7 +39,7 @@ export const NavAbout: React.FC = () => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Grid container direction="row">
+                  <Grid container alignContent='center'  direction="row">
                     <Typography variant="h5" component="h2">
                       About me
                     </Typography>
