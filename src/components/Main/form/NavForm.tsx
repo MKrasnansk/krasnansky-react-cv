@@ -32,7 +32,7 @@ export const NavForm: React.FC = () => {
                 >
                   <Grid container alignContent="center" direction="row">
                     <Typography variant="h5" component="h2">
-                      Contact form
+                      Contact me
                     </Typography>
                   </Grid>
                   <Typography component="h4">

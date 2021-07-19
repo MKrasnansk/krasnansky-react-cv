@@ -3,8 +3,8 @@ import {
   DialogContent,
   Button,
   Slide,
-  SlideProps,
 } from "@material-ui/core";
+import { TransitionProps } from "@material-ui/core/transitions/transition";
 import React from "react";
 import { Curiculum } from "./Curiculum";
 
@@ -12,9 +12,12 @@ interface State {
   isOpen: boolean;
   onNo: any;
 }
-const DialogTransition = (props: JSX.IntrinsicAttributes & SlideProps) => (
-  <Slide direction="up" {...props} />
-);
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & { children?: React.ReactElement<any, any> },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export const CvDialog: React.FC<State> = (props) => {
   const { isOpen, onNo } = props;
@@ -24,7 +27,7 @@ export const CvDialog: React.FC<State> = (props) => {
         fullScreen
         open={isOpen}
         onClose={onNo}
-        TransitionComponent={DialogTransition}
+        TransitionComponent={Transition}
       >
         <DialogContent style={{ background: "#2f2f2f" }}>
           <Curiculum />
