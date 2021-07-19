@@ -1,14 +1,14 @@
-import {Grid } from "@material-ui/core";
 import React from "react";
-import { tileData } from "../../assets/img/tileData";
-import { WorkCardItem } from "./gallery/WorkCardItem";
+import { Grid } from "@material-ui/core";
+import { tileData } from "../../../assets/img/tileData";
+import { WorkCardItem } from "./WorkCardItem";
 
 export const GalleryCard: React.FC = () => {
   return (
     <>
       <h3 style={{ textAlign: "center" }}>My works</h3>
       <Grid
-        container={true}
+        container
         direction="row"
         justifyContent="space-evenly"
         alignItems="center"

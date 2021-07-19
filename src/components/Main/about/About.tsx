@@ -1,6 +1,6 @@
 import { Avatar, Box, Grid, Typography } from "@material-ui/core";
 import React from "react";
-import faceAvatar from "../../assets/img/krasnansky.png";
+import faceAvatar from "../../../assets/img/krasnansky.png";
 
 export const About: React.FC = () => {
   return (

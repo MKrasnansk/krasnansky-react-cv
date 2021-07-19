@@ -8,43 +8,23 @@ import {
   CardActions,
   CardContent,
   Container,
-  Dialog,
-  DialogContent,
   Grid,
   Typography,
-  useMediaQuery,
 } from "@material-ui/core";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
 import React, { useState } from "react";
 import { theme } from "../../../theme";
-import { About } from "../About";
+import { About } from "./About";
+import { AboutDialog } from "./AboutDialog";
 
 export const NavAbout: React.FC = () => {
-  const [openNav, setOpenNav] = useState(false);
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const handleClickOpenNav = () => {
-    setOpenNav(true);
-  };
-  const handleCloseNav = () => {
-    setOpenNav(false);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const openDialog = () => setIsOpen(true);
+  const closeDialog = () => setIsOpen(false);
   return (
     <>
       <Container>
-        <Dialog
-          fullScreen={fullScreen}
-          open={openNav}
-          onClose={handleCloseNav}
-          aria-labelledby="responsive-dialog-title"
-          scroll="paper"
-        >
-          <DialogContent style={{ background: "#2f2f2f" }}>
-            <About />
-          </DialogContent>
-          <Button onClick={handleCloseNav} color="primary" autoFocus>
-            Ok
-          </Button>
-        </Dialog>
+        <AboutDialog isOpen={isOpen} onNo={closeDialog} />
         <Card
           style={{
             background: theme.palette.text.disabled,
@@ -73,8 +53,12 @@ export const NavAbout: React.FC = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpenNav}>
-              Explore content
+            <Button
+              size="small"
+              color="primary"
+              onClick={openDialog}
+            >
+              Read more
             </Button>
           </CardActions>
         </Card>

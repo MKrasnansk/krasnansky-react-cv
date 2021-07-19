@@ -1,45 +1,45 @@
-import * as React from "react";
 import { Box, Container } from "@material-ui/core";
+import * as React from "react";
 import { Fffoter } from "./Footer/Fffoter";
+import { SocialIcon } from "./Footer/SocialIcon";
 import { HeaderMain } from "./Header/HeaderMain";
+import { Oclock } from "./Header/Oclock";
 import { Certification } from "./Main/Certification";
-import { GalleryCard } from "./Main/GalleryCard";
+import { GalleryCard } from "./Main/gallery/GalleryCard";
 import { HeaderChip } from "./Main/HeaderChip";
 import { Nav } from "./Main/nav/Nav";
 import { NextGoals } from "./Main/NextGoals";
-import { Oclock } from "./Main/Oclock";
 import { OtherChips } from "./Main/OtherChips";
-import { SocialIcon } from "./Main/SocialIcon";
 import { StravaApi } from "./Main/strava/StravaApi";
 import { WorkExperience } from "./Main/WorkExperience";
 
 export const MainLayout: React.FC = () => {
   return (
     <div>
-    <Container>
-      <Box bgcolor="text.secondary">
-        <main>
-          <header>
-            <Oclock />
-            <HeaderMain />
-          </header>
-          <article>
-            <Nav />
-            <HeaderChip />
-            <OtherChips />
-            <GalleryCard />
-            <Certification />
-            <NextGoals />
-            <WorkExperience />
-          </article>
-        </main>
-        <footer>
-          <SocialIcon />
-          <StravaApi />
-          <Fffoter  />
-        </footer>
-      </Box>
-    </Container>
+      <Container>
+        <Box bgcolor="text.secondary">
+          <main>
+            <header>
+              <Oclock />
+              <HeaderMain />
+            </header>
+            <article>
+              <Nav />
+              <HeaderChip />
+              <OtherChips />
+              <GalleryCard />
+              <Certification />
+              <NextGoals />
+              <WorkExperience />
+            </article>
+          </main>
+          <footer>
+            <SocialIcon />
+            <StravaApi />
+            <Fffoter />
+          </footer>
+        </Box>
+      </Container>
     </div>
   );
 };

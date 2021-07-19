@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -9,42 +9,25 @@ import {
   CardActions,
   CardContent,
   Container,
-  Dialog,
-  DialogContent,
   Grid,
   Typography,
-  useMediaQuery,
 } from "@material-ui/core";
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
-import { ContactForm } from "../ContactForm";
 import { theme } from "../../../theme";
+import { ContactForm } from "./ContactForm";
+import { FormDialog } from "./FormDialog";
+
 
 export const NavForm: React.FC = () => {
-  const [openForm, setOpenForm] = React.useState(false);
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const handleClickOpenForm = () => {
-    setOpenForm(true);
-  };
-  const handleCloseForm = () => {
-    setOpenForm(false);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openDialog = () => setIsOpen(true);
+  const closeDialog = () => setIsOpen(false);
+
   return (
     <>
       <Container>
-        <Dialog
-          fullScreen={fullScreen}
-          open={openForm}
-          onClose={handleCloseForm}
-          aria-labelledby="responsive-dialog-title"
-          scroll="paper"
-        >
-          <DialogContent style={{ background: "#2f2f2f" }}>
-            <ContactForm />
-          </DialogContent>
-          <Button onClick={handleCloseForm} color="primary" autoFocus>
-            Close
-          </Button>
-        </Dialog>
+        <FormDialog isOpen={isOpen}  onNo={closeDialog} />
         <Card
           style={{
             background: theme.palette.text.disabled,
@@ -56,16 +39,14 @@ export const NavForm: React.FC = () => {
               <CardActionArea>
                 <AccordionSummary
                   expandIcon={<FormatListBulletedIcon color="secondary" />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
                 >
                   <Grid container direction="row">
                     <Typography variant="h5" component="h2">
-                      Kontaktný formular
+                      Contact form
                     </Typography>
                   </Grid>
                   <Typography component="h4">
-                    Budem rád ak my pošlete správu.
+                    I will be grateful for your message.
                   </Typography>
                 </AccordionSummary>
               </CardActionArea>
@@ -75,8 +56,8 @@ export const NavForm: React.FC = () => {
             </Accordion>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpenForm}>
-              Explore content
+            <Button size="small" color="primary" onClick={openDialog}>
+              Explore form
             </Button>
           </CardActions>
         </Card>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box} from "@material-ui/core";
-import stravaLogo from "../../assets/img/Strava_Logo.svg";
+import stravaLogo from "../../../assets/img/Strava_Logo.svg";
 export const StravaIcon: React.FC = () => {
   return (
     <>

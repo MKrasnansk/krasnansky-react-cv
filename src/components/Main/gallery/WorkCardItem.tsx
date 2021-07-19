@@ -3,14 +3,11 @@ import {
   Card,
   CardActions,
   CardContent,
-  Dialog,
-  DialogContent,
-  Grid,
   Typography,
-  useMediaQuery,
 } from "@material-ui/core";
 import React, { useState } from "react";
 import { theme } from "../../../theme";
+import { DialogGallery } from "./DialogGallery";
 
 interface Props {
   title: string;
@@ -21,14 +18,9 @@ interface Props {
 }
 export const WorkCardItem: React.FC<Props> = (props) => {
   const { title, info, describe, source, demo } = props;
-  const [open, setOpen] = useState(false);
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const openDialog = () => setIsOpen(true);
+  const closeDialog = () => setIsOpen(false);
   return (
     <>
       <Card
@@ -38,67 +30,33 @@ export const WorkCardItem: React.FC<Props> = (props) => {
           marginInline: "5px",
         }}
       >
-        <Dialog
-          fullScreen={fullScreen}
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="responsive-dialog-title"
-          scroll="paper"
-        >
-          <DialogContent
-            style={{
-              background: theme.palette.text.disabled,
-              color: theme.palette.primary.main,
-            }}
+        <DialogGallery
+          isOpen={isOpen}
+          describe={describe}
+          source={source}
+          demo={demo}
+          onNo={closeDialog}
+        />
+        <CardContent>
+          <Typography
+            color="secondary"
+            gutterBottom
+            variant="h5"
+            component="h2"
           >
-            <h3>{title}</h3>
-            <p>{describe}</p>
-            <Grid container direction="row-reverse">
-              {source.length > 0 ? (
-                <Button href={source} color="secondary">
-                  Source
-                </Button>
-              ) : (
-                ""
-              )}
-              {demo.length > 0 ? (
-                <Button href={demo} color="secondary">
-                  Live Demo
-                </Button>
-              ) : (
-                ""
-              )}
-            </Grid>
-          </DialogContent>
-          <Button
-            onClick={handleClose}
-            style={{ background: theme.palette.text.disabled }}
-            variant="contained"
-            autoFocus
+            {title}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="primary"
+            component="p"
+            style={{ width: "150px", height: "70px" }}
           >
-            Ok
-          </Button>
-        </Dialog>
-          <CardContent>
-            <Typography
-              color="secondary"
-              gutterBottom
-              variant="h5"
-              component="h2"
-            >
-              {title}
-            </Typography>
-            <Typography
-              variant="body2"
-              color="primary"
-              component="p"
-              style={{ width: "150px", height: "70px" }}
-            >
-              {info}
-            </Typography>
-          </CardContent>
+            {info}
+          </Typography>
+        </CardContent>
         <CardActions>
-          <Button size="small" color="default" onClick={handleClickOpen}>
+          <Button size="small" color="default" onClick={openDialog}>
             Learn More
           </Button>
         </CardActions>

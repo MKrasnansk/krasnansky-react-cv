@@ -1,7 +1,7 @@
 import React from "react";
-import { NavAbout } from "./NavAbout";
-import { NavCv } from "./NavCv";
-import { NavForm } from "./NavForm";
+import { NavAbout } from "../about/NavAbout";
+import { NavCv } from "../cv/NavCv";
+import { NavForm } from "../form/NavForm";
 
 export const Nav: React.FC = () => {
   return (

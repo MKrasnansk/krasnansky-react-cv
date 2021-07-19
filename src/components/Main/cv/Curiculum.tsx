@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/img/stylesCv.scss";
+import "../../../assets/img/stylesCv.scss";
 export const Curiculum: React.FC = () => {
   return (
     <>

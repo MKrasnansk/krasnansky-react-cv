@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -9,44 +8,23 @@ import {
   CardActions,
   CardContent,
   Container,
-  Dialog,
-  DialogContent,
   Grid,
   Typography,
-  useMediaQuery,
 } from "@material-ui/core";
 import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify";
-import { Curiculum } from "../Curiculum";
+import React, { useState } from "react";
 import { theme } from "../../../theme";
+import { Curiculum } from "./Curiculum";
+import { CvDialog } from "./CvDialog";
 
 export const NavCv: React.FC = () => {
-  const [openCv, setOpenCv] = React.useState(false);
-  const fullScreen = useMediaQuery(theme.breakpoints.down("xl"));
-
-  const handleClickOpenCv = () => {
-    setOpenCv(true);
-  };
-
-  const handleCloseCv = () => {
-    setOpenCv(false);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const openDialog = () => setIsOpen(true);
+  const closeDialog = () => setIsOpen(false);
   return (
     <>
       <Container>
-        <Dialog
-          fullScreen={fullScreen}
-          open={openCv}
-          onClose={handleCloseCv}
-          aria-labelledby="responsive-dialog-title"
-          scroll="paper"
-        >
-          <DialogContent style={{ background: "#2f2f2f" }}>
-            <Curiculum />
-          </DialogContent>
-          <Button onClick={handleCloseCv} color="primary" autoFocus>
-            Ok
-          </Button>
-        </Dialog>
+        <CvDialog isOpen={isOpen} onNo={closeDialog} />
         <Card
           style={{
             background: theme.palette.text.disabled,
@@ -58,15 +36,13 @@ export const NavCv: React.FC = () => {
               <Accordion style={{ background: "none" }}>
                 <AccordionSummary
                   expandIcon={<FormatAlignJustifyIcon color="secondary" />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
                 >
                   <Grid container direction="row">
                     <Typography variant="h5" component="h2">
-                      Zivotopis
+                      CV
                     </Typography>
                   </Grid>
-                  <Typography component="h4">Curriculum vitae</Typography>
+                  <Typography component="h4">My curriculum vitae</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Curiculum />
@@ -75,8 +51,8 @@ export const NavCv: React.FC = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpenCv}>
-              Explore content
+            <Button size="small" color="primary" onClick={openDialog}>
+              Read more
             </Button>
           </CardActions>
         </Card>
