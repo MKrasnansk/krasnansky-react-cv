@@ -16,7 +16,7 @@ export const HeaderMain: React.FC = () => {
         >
           <h4 style={{ color: theme.palette.text.primary }}>
             Hello, I am Michal. <br />
-            I am from Bratislava and I very love work with computers. <br />I
+            I am from Bratislava and I really love work with computers. <br />I
             love football, running and people like me with the same hobbies.
           </h4>
         </Grid>

@@ -20,7 +20,7 @@ export const tileData = [
   {
     id: 3,
     title: "To-do list",
-    info: "Pretty and simple to-do list. I use it to often.",
+    info: "Pretty and simple to-do list. I use it too often.",
     describe:
       "Tento to-do list je vytvorený s Vue. Používa localbase na lokálne ukladanie položiek v zariadení bez databázy. Komponenty s Vuetify.",
     sourceHref: "https://github.com/MKrasnansk/to-do_vue_vuetify",
@@ -29,7 +29,7 @@ export const tileData = [
   {
     id: 4,
     title: "Meal Shop",
-    info: "Meal shop is for orderdering a food.",
+    info: "Meal shop is an app for orderdering a food.",
     describe:
       "Meal Shop je web apka pre donášku jedla. Použitý je React. Požite rôzne hooky.",
     sourceHref: "https://github.com/MKrasnansk/meal-shop",
