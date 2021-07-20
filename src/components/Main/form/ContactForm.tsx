@@ -53,10 +53,16 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const ContactForm: React.FC = () => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [subject, setSubject] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+  const [formInputs, setFormInputs] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  })
+  // const [name, setName] = useState<string>("");
+  // const [email, setEmail] = useState<string>("");
+  // const [subject, setSubject] = useState<string>("");
+  // const [message, setMessage] = useState<string>("");
   const [errName, seterrName] = useState<boolean>(true);
   const [errEmail, seterrEmail] = useState<boolean>(true);
   const [errSubject, seterrSubject] = useState<boolean>(true);
@@ -66,36 +72,46 @@ export const ContactForm: React.FC = () => {
   const [send, setSend] = useState(false);
   const classes = useStyles();
   const handleName = (e: ChangeEvent<HTMLInputElement>): void => {
-    if (name.length > 2) {
+    if (e.target.value.length > 2) {
       seterrName(false);
     } else {
       seterrName(true);
     }
-    setName(e.target.value);
+    setFormInputs((prewState)=> {
+      return { ...prewState, name: e.target.value }
+    })
   };
-  const handleEmail = (e: ChangeEvent<HTMLInputElement>): void => {
-    if (new RegExp(/[\w-]+@([\w-]+\.)+[\w-]+/gm).test(email)) {
+  const handleEmail = (e: ChangeEvent<HTMLInputElement>): any => {
+    if (new RegExp(/[\w-]+@([\w-]+\.)+[\w-]+/gm).test(e.target.value)) {
       seterrEmail(false);
     } else {
       seterrEmail(true);
     }
-    setEmail(e.target.value);
+    setFormInputs((prewState)=> {
+      return { ...prewState, email: e.target.value }
+    })
   };
   const handleSubject = (e: ChangeEvent<HTMLInputElement>): void => {
-    if (subject.length > 2) {
+    if (e.target.value.length > 2) {
       seterrSubject(false);
     } else {
       seterrSubject(true);
     }
-    setSubject(e.target.value);
+    setFormInputs({
+      ...formInputs,
+      subject: e.target.value
+    })
   };
   const handleMessage = (e: ChangeEvent<HTMLTextAreaElement>): void => {
-    if (message.length > 5) {
+    if (e.target.value.length > 5) {
       seterrMessage(false);
     } else {
       seterrMessage(true);
     }
-    setMessage(e.target.value);
+    setFormInputs({
+      ...formInputs,
+      message: e.target.value
+    })
   };
   const handleOnSubmit = async (
     e: FormEvent<HTMLFormElement>
@@ -108,10 +124,7 @@ export const ContactForm: React.FC = () => {
       return;
     } else {
       const objectMessage: Record<string, any> = {
-        name,
-        email,
-        subject,
-        message,
+       ...formInputs
       };
       try {
         await axios
@@ -151,7 +164,7 @@ export const ContactForm: React.FC = () => {
                 className={classes.err}
                 helperText={required ? "This field is required!" : ""}
                 type="text"
-                value={name}
+                value={formInputs.name}
                 onChange={handleName}
                 label="Name"
                 id="username"
@@ -159,7 +172,7 @@ export const ContactForm: React.FC = () => {
                   className: classes.color,
                   startAdornment: (
                     <InputAdornment position="start">
-                      {name.length < 2 ? (
+                      {formInputs.name.length < 2 ? (
                         <CancelIcon color="primary" />
                       ) : (
                         <CheckCircleIcon color="secondary" />
@@ -173,7 +186,7 @@ export const ContactForm: React.FC = () => {
                 className={classes.err}
                 helperText={required ? "Email is not vallid!" : ""}
                 type="email"
-                value={email}
+                value={formInputs.email}
                 onChange={handleEmail}
                 required
                 label="E-mail"
@@ -197,7 +210,7 @@ export const ContactForm: React.FC = () => {
                 helperText={required ? "This field is required!" : ""}
                 type="text"
                 onChange={handleSubject}
-                value={subject}
+                value={formInputs.subject}
                 required
                 label="Subject"
                 id="subject"
@@ -220,7 +233,7 @@ export const ContactForm: React.FC = () => {
                 helperText={required ? "This field is required!" : ""}
                 type="textarea"
                 onChange={handleMessage}
-                value={message}
+                value={formInputs.message}
                 required
                 label="Message"
                 multiline
