@@ -15,4 +15,7 @@ export const theme = createTheme({
           disabled: '#333'
       }
     },
+    transitions: {
+      create: () => 'none',
+    },
   });

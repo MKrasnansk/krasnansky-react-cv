@@ -3,6 +3,7 @@ import {
   Dialog,
   DialogContent,
   Slide,
+  SlideProps,
 } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
 import React from "react";
@@ -12,9 +13,10 @@ interface State {
   isOpen: boolean;
   onNo: any;
 }
+//props: JSX.IntrinsicAttributes & SlideProps
 const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & { children?: React.ReactElement<any, any> },
-  ref: React.Ref<unknown>,
+  props: TransitionProps & { children?: React.ReactElement<boolean, any> },
+  ref: React.Ref<SlideProps>,
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -30,7 +32,7 @@ export const AboutDialog: React.FC<State> = (props) => {
         <DialogContent style={{ background: "#2f2f2f" }}>
           <About />
         </DialogContent>
-        <Button onClick={onNo} color="primary" >
+        <Button disableRipple onClick={onNo} color="primary" >
           Close
         </Button>
       </Dialog>

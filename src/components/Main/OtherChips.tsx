@@ -1,6 +1,6 @@
 import React from "react";
 import {Grid, Chip } from "@material-ui/core";
-import { OtherChipsData } from "../../assets/otherChips";
+import { OtherChipsData } from "../../assets/otherChips.js";
 export const OtherChips: React.FC = () => {
   return (
     <>
@@ -21,5 +21,6 @@ export const OtherChips: React.FC = () => {
     </>
   );
 };
+export const MemoizedOtherChips = React.memo(OtherChips);
 
 

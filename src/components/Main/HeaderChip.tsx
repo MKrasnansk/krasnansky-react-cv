@@ -59,3 +59,4 @@ export const HeaderChip: React.FC = () => {
     </>
   );
 };
+export const MemoizedHeaderChips = React.memo(HeaderChip);

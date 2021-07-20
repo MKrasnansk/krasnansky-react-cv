@@ -1,29 +1,29 @@
+import React from "react";
 import {
   Button, Dialog,
   DialogContent,
-  Grid, Slide
+  Grid, Slide, SlideProps
 } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
-import { title } from "process";
-import React from "react";
 import { theme } from "../../../theme";
 
 interface State {
   isOpen: boolean;
   onNo: any;
+  title: string
   describe: string;
   source: string;
   demo: string;
 }
 const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & { children?: React.ReactElement<any, any> },
-  ref: React.Ref<unknown>,
+  props: TransitionProps & { children?: React.ReactElement<SlideProps> },
+  ref: React.Ref<State>,
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export const DialogGallery: React.FC<State> = (props) => {
-  const { isOpen, onNo, describe, source, demo } = props;
+  const { isOpen, onNo, describe, source, demo, title } = props;
 
   return (
     <>

@@ -64,7 +64,7 @@ export const StravaApi: React.FC = () => {
   return (
     <>
       <Container maxWidth="md">
-        <Grid container direction="row" spacing={4} justifyContent="center">
+        <Grid container direction="row" spacing={2} justifyContent="center">
           {activities.map((move) => (
             <ActivityComponent
               key={move.id}
@@ -80,3 +80,4 @@ export const StravaApi: React.FC = () => {
     </>
   );
 };
+export const MemoizedStravaApi = React.memo(StravaApi);

@@ -33,6 +33,7 @@ export const WorkCardItem: React.FC<Props> = (props) => {
         <DialogGallery
           isOpen={isOpen}
           describe={describe}
+          title={title}
           source={source}
           demo={demo}
           onNo={closeDialog}
@@ -64,3 +65,4 @@ export const WorkCardItem: React.FC<Props> = (props) => {
     </>
   );
 };
+export const MemoizedGallery = React.memo(WorkCardItem);

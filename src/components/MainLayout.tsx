@@ -3,7 +3,6 @@ import * as React from "react";
 import { Fffoter } from "./Footer/Fffoter";
 import { SocialIcon } from "./Footer/SocialIcon";
 import { HeaderMain } from "./Header/HeaderMain";
-import { Oclock } from "./Header/Oclock";
 import { Certification } from "./Main/Certification";
 import { GalleryCard } from "./Main/gallery/GalleryCard";
 import { HeaderChip } from "./Main/HeaderChip";
@@ -20,7 +19,6 @@ export const MainLayout: React.FC = () => {
         <Box bgcolor="text.secondary">
           <main>
             <header>
-              <Oclock />
               <HeaderMain />
             </header>
             <article>

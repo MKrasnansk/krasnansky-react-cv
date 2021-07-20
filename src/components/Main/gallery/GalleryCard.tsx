@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import { tileData } from "../../../assets/img/tileData";
 import { WorkCardItem } from "./WorkCardItem";
+import { tileData } from "../../../assets/tileData";
 
 export const GalleryCard: React.FC = () => {
   return (
@@ -27,3 +27,4 @@ export const GalleryCard: React.FC = () => {
     </>
   );
 };
+export const MemoizedGalleryCard = React.memo(GalleryCard);
