@@ -53,4 +53,22 @@ export const tileData = [
     sourceHref: "https://github.com/MKrasnansk/krasnansky-react-cv",
     liveDemoHref: "",
   },
+  {
+    id: 7,
+    title: "React-redux",
+    info: "Praxes in React-redux.",
+    describe:
+      "Jednoduchá aplikácia, pri ktorej som si precvičil implementáciu a používanie redux. Použite: react-redux, reduxjs/toolkit, firebase.",
+    sourceHref: "https://github.com/MKrasnansk/react-redux-praxes",
+    liveDemoHref: "https://redux-praxes.netlify.app/",
+  },
+  {
+    id: 8,
+    title: "Movie-api-react-ts",
+    info: "App to serach in movie database.",
+    describe:
+      "Aplikácia na vyhľadávanie filmov v databaye omdb. Úlohu som spravil ako zadanie pred pohovorom. Žiaľ neúspešne viem, čo je treba dorobiť a prerobiť. Onedlho sa do toho pustím. Aspoň si môžte pozrieť hard code 😅 narýchlo zbuchany od juniora.",
+    sourceHref: "https://github.com/MKrasnansk/OMDb_API_react_ts",
+    liveDemoHref: "https://movie-api-react-ts.netlify.app/",
+  },
 ];
