@@ -64,11 +64,11 @@ export const tileData = [
   },
   {
     id: 8,
-    title: "Movie-api-react-ts",
-    info: "App to serach in movie database.",
+    title: "React-router",
+    info: "App practice example to work with react-router.",
     describe:
-      "Aplikácia na vyhľadávanie filmov v databaye omdb. Úlohu som spravil ako zadanie pred pohovorom. Žiaľ neúspešne viem, čo je treba dorobiť a prerobiť. Onedlho sa do toho pustím. Aspoň si môžte pozrieť hard code 😅 narýchlo zbuchany od juniora.",
-    sourceHref: "https://github.com/MKrasnansk/OMDb_API_react_ts",
-    liveDemoHref: "https://movie-api-react-ts.netlify.app/",
+      "Prakticke precvicovanie SPA, react-router-dom, lazy-loading, firebase hosting.",
+    sourceHref: "https://github.com/MKrasnansk/react-router-practise",
+    liveDemoHref: "https://react-prep-6e47c--react-router-practise-m2314tsv.web.app/quotes",
   },
 ];
