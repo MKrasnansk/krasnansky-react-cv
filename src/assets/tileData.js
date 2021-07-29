@@ -71,4 +71,14 @@ export const tileData = [
     sourceHref: "https://github.com/MKrasnansk/react-router-practise",
     liveDemoHref: "https://react-prep-6e47c--react-router-practise-m2314tsv.web.app/quotes",
   },
+  
+  {
+    id: 9,
+    title: "React-Authentication",
+    info: "Authentication to firebase with email and pass.",
+    describe:
+      "Login do firebase za pomoci react, react router, firebase, localStorage. Moznost zmeny hesla.",
+    sourceHref: "https://github.com/MKrasnansk/react-Authentication-firebase",
+    liveDemoHref: "https://authentication-firebase-react.netlify.app/",
+  },
 ];
