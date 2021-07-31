@@ -28,6 +28,7 @@ export const WorkCardItem: React.FC<Props> = (props) => {
           background: theme.palette.text.disabled,
           marginBlock: "10px",
           marginInline: "5px",
+          width: '230px',
         }}
       >
         <DialogGallery

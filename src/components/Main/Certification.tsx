@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Chip, Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Grow from "@material-ui/core/Grow";
@@ -8,7 +9,6 @@ import {
   otherCourses,
   udemyCourses,
 } from "../../assets/courseData";
-import { Fragment } from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "center",
       margin: "0 10px 10px 10px",
     },
+    chip: {
+      maxWidth: '100%',
+      textAlign: 'center'
+    }
   })
 );
 
@@ -79,9 +83,11 @@ export const Certification: React.FC = () => {
           {udemyCourses.map((ud) => (
             <Grow in={udemy}>
               <Chip
+              className={classes.chip}
                 variant="outlined"
                 size="small"
                 label={ud.title}
+                // labelSmall
                 color="primary"
               />
             </Grow>
