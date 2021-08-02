@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, Fragment, useState } from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
@@ -59,10 +59,6 @@ export const ContactForm: React.FC = () => {
     subject: '',
     message: '',
   })
-  // const [name, setName] = useState<string>("");
-  // const [email, setEmail] = useState<string>("");
-  // const [subject, setSubject] = useState<string>("");
-  // const [message, setMessage] = useState<string>("");
   const [errName, seterrName] = useState<boolean>(true);
   const [errEmail, seterrEmail] = useState<boolean>(true);
   const [errSubject, seterrSubject] = useState<boolean>(true);
@@ -142,7 +138,7 @@ export const ContactForm: React.FC = () => {
     }
   };
   return (
-    <>
+    <Fragment>
       <Container>
         <Grid container alignContent="center" alignItems="center">
           <form
@@ -278,6 +274,6 @@ export const ContactForm: React.FC = () => {
           </form>
         </Grid>
       </Container>
-    </>
+    </Fragment>
   );
 };

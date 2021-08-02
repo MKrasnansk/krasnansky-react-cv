@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -16,7 +16,7 @@ import { ContactForm } from "./ContactForm";
 
 export const NavForm: React.FC = () => {
   return (
-    <>
+    <Fragment>
       <Container>
         <Card
           style={{
@@ -47,6 +47,6 @@ export const NavForm: React.FC = () => {
           </CardContent>
         </Card>
       </Container>
-    </>
+    </Fragment>
   );
 };
