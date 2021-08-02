@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "0 10px 10px 10px",
     },
     chip: {
-      maxWidth: '100%',
-      textAlign: 'center'
-    }
+      maxWidth: "100%",
+      textAlign: "center",
+    },
   })
 );
 
@@ -81,9 +81,9 @@ export const Certification: React.FC = () => {
       {udemy ? (
         <Fragment>
           {udemyCourses.map((ud) => (
-            <Grow in={udemy}>
+            <Grow in={udemy} key={Math.random()}>
               <Chip
-              className={classes.chip}
+                className={classes.chip}
                 variant="outlined"
                 size="small"
                 label={ud.title}
@@ -99,7 +99,7 @@ export const Certification: React.FC = () => {
       {learn ? (
         <Fragment>
           {learnCourses.map((ler) => (
-            <Grow in={learn}>
+            <Grow in={learn} key={Math.random()}>
               <Chip
                 variant="outlined"
                 size="small"
@@ -115,7 +115,7 @@ export const Certification: React.FC = () => {
       {mastery ? (
         <Fragment>
           {otherCourses.map((oth) => (
-            <Grow in={mastery}>
+            <Grow in={mastery} key={Math.random()}>
               <Chip
                 variant="outlined"
                 size="small"

@@ -1,4 +1,8 @@
-export const OtherChipsData = [
+export interface Chips{
+    id:number
+    label:string
+}
+export const OtherChipsData:Chips[] = [
     {
         id:1,
         label: '3ds Max'

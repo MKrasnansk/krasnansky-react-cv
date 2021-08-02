@@ -1,4 +1,12 @@
-export const tileData = [
+export interface GalleryData {
+  id:number
+  title: string
+  info: string
+  describe: string
+  sourceHref: string
+  liveDemoHref: string
+}
+export const tileData:GalleryData[] = [
   {
     id: 1,
     title: "I-Tunes",

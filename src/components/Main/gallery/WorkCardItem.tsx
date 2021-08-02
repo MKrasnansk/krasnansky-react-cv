@@ -5,38 +5,35 @@ import {
   CardContent,
   Typography,
 } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { theme } from "../../../theme";
 import { DialogGallery } from "./DialogGallery";
+import { GalleryData } from "./../../../assets/tileData";
 
-interface Props {
-  title: string;
-  info: string;
-  describe: string;
-  source: string;
-  demo: string;
-}
-export const WorkCardItem: React.FC<Props> = (props) => {
-  const { title, info, describe, source, demo } = props;
+export const WorkCardItem: React.FC<GalleryData> = (props) => {
+  const { id, title, info, describe, sourceHref, liveDemoHref } = props;
   const [isOpen, setIsOpen] = useState(false);
   const openDialog = () => setIsOpen(true);
   const closeDialog = () => setIsOpen(false);
   return (
-    <>
+    <Fragment>
       <Card
         style={{
           background: theme.palette.text.disabled,
           marginBlock: "10px",
           marginInline: "5px",
-          width: '230px',
+          width: "230px",
         }}
       >
         <DialogGallery
+          key={id}
+          id={id}
+          info={info}
           isOpen={isOpen}
           describe={describe}
           title={title}
-          source={source}
-          demo={demo}
+          sourceHref={sourceHref}
+          liveDemoHref={liveDemoHref}
           onNo={closeDialog}
         />
         <CardContent>
@@ -63,7 +60,7 @@ export const WorkCardItem: React.FC<Props> = (props) => {
           </Button>
         </CardActions>
       </Card>
-    </>
+    </Fragment>
   );
 };
 export const MemoizedGallery = React.memo(WorkCardItem);

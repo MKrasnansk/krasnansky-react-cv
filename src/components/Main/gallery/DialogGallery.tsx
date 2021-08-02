@@ -1,29 +1,26 @@
-import React from "react";
 import {
   Button, Dialog,
   DialogContent,
   Grid, Slide, SlideProps
 } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
+import React from "react";
 import { theme } from "../../../theme";
+import { GalleryData } from './../../../assets/tileData';
 
-interface State {
+interface State extends GalleryData{
   isOpen: boolean;
   onNo: any;
-  title: string
-  describe: string;
-  source: string;
-  demo: string;
 }
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children?: React.ReactElement<SlideProps> },
-  ref: React.Ref<State>,
+  ref: React.Ref<GalleryData>,
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export const DialogGallery: React.FC<State> = (props) => {
-  const { isOpen, onNo, describe, source, demo, title } = props;
+  const { isOpen, onNo, describe, sourceHref, liveDemoHref, title } = props;
 
   return (
     <>
@@ -41,15 +38,15 @@ export const DialogGallery: React.FC<State> = (props) => {
           <h3>{title}</h3>
           <p>{describe}</p>
           <Grid container direction="row-reverse">
-            {source.length > 0 ? (
-              <Button href={source} color="secondary">
+            {sourceHref.length > 0 ? (
+              <Button href={sourceHref} color="secondary">
                 Source
               </Button>
             ) : (
               ""
             )}
-            {demo.length > 0 ? (
-              <Button href={demo} color="secondary">
+            {liveDemoHref.length > 0 ? (
+              <Button href={liveDemoHref} color="secondary">
                 Live Demo
               </Button>
             ) : (

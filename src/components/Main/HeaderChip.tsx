@@ -1,7 +1,7 @@
 import React from "react";
 import Chip from "@material-ui/core/Chip";
 import Grid from "@material-ui/core/Grid";
-import { HeaderChipsData } from "../../assets/headerChipsData";
+import { front, back } from "./../../assets/headerChipsData";
 
 export const HeaderChip: React.FC = () => {
   return (
@@ -21,31 +21,27 @@ export const HeaderChip: React.FC = () => {
         />
         <div>
           <Grid container direction="row" justifyContent="center">
-            {HeaderChipsData.map((data) =>
-              data.front?.map((fdata) => (
-                <Chip
-                  key={fdata.id}
-                  variant="outlined"
-                  size="small"
-                  label={fdata.label}
-                  color="primary"
-                />
-              ))
-            )}
+            {front.map((data) => (
+              <Chip
+                key={data.id}
+                variant="outlined"
+                size="small"
+                label={data.label}
+                color="primary"
+              />
+            ))}
           </Grid>
 
           <Grid container direction="row" justifyContent="center">
-            {HeaderChipsData.map((data) =>
-              data.back?.map((bdata) => (
-                <Chip
-                  key={bdata.id}
-                  variant="outlined"
-                  size="small"
-                  label={bdata.label}
-                  color="secondary"
-                />
-              ))
-            )}
+            {back.map((data) => (
+              <Chip
+                key={data.id}
+                variant="outlined"
+                size="small"
+                label={data.label}
+                color="secondary"
+              />
+            ))}
           </Grid>
         </div>
 
