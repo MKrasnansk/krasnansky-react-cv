@@ -8,7 +8,7 @@ interface Activity {
   distance: string;
   time: string;
   temp: string;
-  date: string
+  date: string;
 }
 const id = String(process.env.REACT_APP_STRAVA_ID);
 const secret = process.env.REACT_APP_STRAVA_SECRET;
@@ -20,7 +20,7 @@ const activities_link = "https://www.strava.com/api/v3/athlete/activities";
 export const StravaApi: React.FC = () => {
   const [activities, setActivites] = useState<Activity[]>([]);
   useEffect(() => {
-    const matches = window.innerWidth > 760
+    const matches = window.innerWidth > 760;
     async function fetchData() {
       const stravaAuthResponse = await axios.all([
         axios.post(
@@ -36,25 +36,37 @@ export const StravaApi: React.FC = () => {
         `${activities_link}?access_token=${accessFinal}`
       );
       const resActivites = [];
-      let numberOfActivities: number = 3
+      let numberOfActivities: number = 3;
       if (matches) {
-        numberOfActivities = 7
+        numberOfActivities = 7;
       }
-      for (let i = 0; i < numberOfActivities ; i += 1) {
-        const id = i + 1;
-        const date = stravaActivityResponse.data[i].start_date_local.slice(0, 10)
-        const type = stravaActivityResponse.data[i].type;
-        const distance =
+      console.log(stravaActivityResponse.data[0]);
+      
+      for (let i = 0; i < numberOfActivities; i += 1) {
+        let id = i + 1;
+        let date = stravaActivityResponse.data[i].start_date_local.slice(0, 10);
+        date = date.replace(/-/g, ".");
+        date = date.slice(5)
+
+        let type = stravaActivityResponse.data[i].type;
+        let distance =
           (stravaActivityResponse.data[i].distance / 1000).toFixed(2) + " Km";
-        const time =
-          (stravaActivityResponse.data[i].moving_time / 60).toFixed(2) +
-          " min.";
-        const temp =
-          (
-            stravaActivityResponse.data[i].moving_time /
-            60 /
-            (stravaActivityResponse.data[i].distance / 1000)
-          ).toFixed(2) + " min/km";
+
+        let t = stravaActivityResponse.data[i].moving_time / 60;
+        let min = Math.floor(t);
+        let sec = Math.floor(60 * (t - min));
+        let time = `${min}:${sec} min.`;
+
+        let d = stravaActivityResponse.data[i].distance / 1000;
+        let tempMin = Math.floor(t/d)
+        let tempSec = Math.floor(60* (t/d - tempMin))
+        let temp = `${tempMin}:${tempSec} min/km`;
+        console.log(temp);
+
+        if (distance === "0.00 Km" || temp === "Infinity min/km") {
+          distance =  stravaActivityResponse.data[i].max_heartrate + " maxHR";
+          temp = stravaActivityResponse.data[i].average_heartrate + ' avgHR';
+        }
         resActivites.push({ type, distance, time, temp, id, date });
       }
       setActivites(resActivites);
