@@ -19,8 +19,10 @@ const activities_link = "https://www.strava.com/api/v3/athlete/activities";
 
 export const StravaApi: React.FC = () => {
   const [activities, setActivites] = useState<Activity[]>([]);
+  const [size, setSize] = useState(window.innerWidth);
+
   useEffect(() => {
-    const matches = window.innerWidth > 760;
+    const matches = size > 760;
     async function fetchData() {
       const stravaAuthResponse = await axios.all([
         axios.post(
@@ -40,13 +42,11 @@ export const StravaApi: React.FC = () => {
       if (matches) {
         numberOfActivities = 7;
       }
-      console.log(stravaActivityResponse.data[0]);
-      
       for (let i = 0; i < numberOfActivities; i += 1) {
         let id = i + 1;
         let date = stravaActivityResponse.data[i].start_date_local.slice(0, 10);
         date = date.replace(/-/g, ".");
-        date = date.slice(5)
+        date = date.slice(5);
 
         let type = stravaActivityResponse.data[i].type;
         let distance =
@@ -58,38 +58,45 @@ export const StravaApi: React.FC = () => {
         let time = `${min}:${sec} min.`;
 
         let d = stravaActivityResponse.data[i].distance / 1000;
-        let tempMin = Math.floor(t/d)
-        let tempSec = Math.floor(60* (t/d - tempMin))
+        let tempMin = Math.floor(t / d);
+        let tempSec = Math.floor(60 * (t / d - tempMin));
         let temp = `${tempMin}:${tempSec} min/km`;
-        console.log(temp);
 
         if (distance === "0.00 Km" || temp === "Infinity min/km") {
-          distance =  stravaActivityResponse.data[i].max_heartrate + " maxHR";
-          temp = stravaActivityResponse.data[i].average_heartrate + ' avgHR';
+          distance = stravaActivityResponse.data[i].max_heartrate + " maxHR";
+          temp = stravaActivityResponse.data[i].average_heartrate + " avgHR";
         }
         resActivites.push({ type, distance, time, temp, id, date });
       }
       setActivites(resActivites);
     }
     fetchData();
+  }, [size]);
+
+  let resizeWindow = () => {
+    setSize(window.innerWidth);
+  };
+  useEffect(() => {
+    resizeWindow();
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
   }, []);
+
   return (
-    <>
-      <Container maxWidth="md">
-        <Grid container direction="row" spacing={2} justifyContent="center">
-          {activities.map((move) => (
-            <ActivityComponent
-              key={move.id}
-              date={move.date}
-              type={move.type}
-              distance={move.distance}
-              temp={move.temp}
-              time={move.time}
-            />
-          ))}
-        </Grid>
-      </Container>
-    </>
+    <Container maxWidth="md">
+      <Grid container direction="row" spacing={2} justifyContent="center">
+        {activities.map((move) => (
+          <ActivityComponent
+            key={move.id}
+            date={move.date}
+            type={move.type}
+            distance={move.distance}
+            temp={move.temp}
+            time={move.time}
+          />
+        ))}
+      </Grid>
+    </Container>
   );
 };
 export const MemoizedStravaApi = React.memo(StravaApi);
