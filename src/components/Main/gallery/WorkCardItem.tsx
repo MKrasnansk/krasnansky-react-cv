@@ -5,16 +5,17 @@ import {
   CardContent,
   Typography,
 } from "@material-ui/core";
-import React, { useState, Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { theme } from "../../../theme";
-import { DialogGallery } from "./DialogGallery";
 import { GalleryData } from "./../../../assets/tileData";
+import { DialogGallery } from "./DialogGallery";
 
 export const WorkCardItem: React.FC<GalleryData> = (props) => {
-  const { id, title, info, describe, sourceHref, liveDemoHref } = props;
+  const { id, title, info, describe, sourceHref, liveDemoHref, imgSrc } = props;
   const [isOpen, setIsOpen] = useState(false);
   const openDialog = () => setIsOpen(true);
   const closeDialog = () => setIsOpen(false);
+
   return (
     <Fragment>
       <Card
@@ -34,6 +35,7 @@ export const WorkCardItem: React.FC<GalleryData> = (props) => {
           title={title}
           sourceHref={sourceHref}
           liveDemoHref={liveDemoHref}
+          imgSrc={imgSrc}
           onNo={closeDialog}
         />
         <CardContent>
@@ -54,6 +56,7 @@ export const WorkCardItem: React.FC<GalleryData> = (props) => {
             {info}
           </Typography>
         </CardContent>
+
         <CardActions>
           <Button size="small" color="default" onClick={openDialog}>
             Learn More

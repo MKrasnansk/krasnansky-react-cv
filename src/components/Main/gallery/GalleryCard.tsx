@@ -16,6 +16,7 @@ export const GalleryCard: React.FC = () => {
         {tileData.map((tile) => (
           <WorkCardItem
             key={tile.id}
+            imgSrc={tile.imgSrc}
             id={tile.id}
             title={tile.title}
             info={tile.info}
