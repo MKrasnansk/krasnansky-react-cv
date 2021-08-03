@@ -20,9 +20,9 @@ const activities_link = "https://www.strava.com/api/v3/athlete/activities";
 export const StravaApi: React.FC = () => {
   const [activities, setActivites] = useState<Activity[]>([]);
   const [size, setSize] = useState(window.innerWidth);
+  const matches = size > 760;
 
   useEffect(() => {
-    const matches = size > 760;
     async function fetchData() {
       const stravaAuthResponse = await axios.all([
         axios.post(
@@ -71,7 +71,7 @@ export const StravaApi: React.FC = () => {
       setActivites(resActivites);
     }
     fetchData();
-  }, [size]);
+  }, [matches]);
 
   let resizeWindow = () => {
     setSize(window.innerWidth);
