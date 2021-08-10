@@ -26,7 +26,6 @@ const Transition = React.forwardRef(function Transition(
 export const DialogGallery: React.FC<State> = (props) => {
   const { isOpen, onNo, describe, sourceHref, liveDemoHref, title, imgSrc } =
     props;
-  console.log();
 
   return (
     <Box>
