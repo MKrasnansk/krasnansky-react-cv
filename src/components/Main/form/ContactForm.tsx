@@ -12,7 +12,7 @@ import {
   InputAdornment,
   TextField,
 } from "@material-ui/core";
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse, AxiosTransformer } from "axios";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,11 +54,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const ContactForm: React.FC = () => {
   const [formInputs, setFormInputs] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [errName, seterrName] = useState<boolean>(true);
   const [errEmail, seterrEmail] = useState<boolean>(true);
   const [errSubject, seterrSubject] = useState<boolean>(true);
@@ -73,9 +73,9 @@ export const ContactForm: React.FC = () => {
     } else {
       seterrName(true);
     }
-    setFormInputs((prewState)=> {
-      return { ...prewState, name: e.target.value }
-    })
+    setFormInputs((prewState) => {
+      return { ...prewState, name: e.target.value };
+    });
   };
   const handleEmail = (e: ChangeEvent<HTMLInputElement>): any => {
     if (new RegExp(/[\w-]+@([\w-]+\.)+[\w-]+/gm).test(e.target.value)) {
@@ -83,9 +83,9 @@ export const ContactForm: React.FC = () => {
     } else {
       seterrEmail(true);
     }
-    setFormInputs((prewState)=> {
-      return { ...prewState, email: e.target.value }
-    })
+    setFormInputs((prewState) => {
+      return { ...prewState, email: e.target.value };
+    });
   };
   const handleSubject = (e: ChangeEvent<HTMLInputElement>): void => {
     if (e.target.value.length > 2) {
@@ -95,8 +95,8 @@ export const ContactForm: React.FC = () => {
     }
     setFormInputs({
       ...formInputs,
-      subject: e.target.value
-    })
+      subject: e.target.value,
+    });
   };
   const handleMessage = (e: ChangeEvent<HTMLTextAreaElement>): void => {
     if (e.target.value.length > 5) {
@@ -106,8 +106,8 @@ export const ContactForm: React.FC = () => {
     }
     setFormInputs({
       ...formInputs,
-      message: e.target.value
-    })
+      message: e.target.value,
+    });
   };
   const handleOnSubmit = async (
     e: FormEvent<HTMLFormElement>
@@ -119,14 +119,13 @@ export const ContactForm: React.FC = () => {
       setProgress(false);
       return;
     } else {
-      const objectMessage: Record<string, any> = {
-       ...formInputs
-      };
       try {
+        const form = document.getElementById("contact-form") as HTMLFormElement;
+        const mail: any = await new FormData(form);
         await axios
-          .post("https://api-cv-mail.herokuapp.com/api/contact", objectMessage)
-          .then((response: AxiosResponse) => {
-            if (response.status === 201) {
+          .post("https://nodemail-email.herokuapp.com/send", mail)
+          .then((response: AxiosResponse<AxiosTransformer>) => {
+            if (response.status === 200) {
               setSend(true);
               setProgress(false);
             }
@@ -142,7 +141,9 @@ export const ContactForm: React.FC = () => {
       <Container>
         <Grid container alignContent="center" alignItems="center">
           <form
-            id="form"
+            id="contact-form"
+            method="POST"
+            encType="multipart/form-data"
             name="sendMessageForm"
             onSubmit={handleOnSubmit}
             className={classes.ful}
@@ -163,7 +164,8 @@ export const ContactForm: React.FC = () => {
                 value={formInputs.name}
                 onChange={handleName}
                 label="Name"
-                id="username"
+                id="name"
+                name="name"
                 InputProps={{
                   className: classes.color,
                   startAdornment: (
@@ -187,6 +189,7 @@ export const ContactForm: React.FC = () => {
                 required
                 label="E-mail"
                 id="email"
+                name="email"
                 InputProps={{
                   className: classes.color,
                   startAdornment: (
@@ -210,6 +213,7 @@ export const ContactForm: React.FC = () => {
                 required
                 label="Subject"
                 id="subject"
+                name="subject"
                 InputProps={{
                   className: classes.color,
                   startAdornment: (
@@ -232,6 +236,8 @@ export const ContactForm: React.FC = () => {
                 value={formInputs.message}
                 required
                 label="Message"
+                id="message"
+                name="message"
                 multiline
                 maxRows={5}
                 InputProps={{
