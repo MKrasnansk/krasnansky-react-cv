@@ -15,7 +15,7 @@ export const Fffoter: React.FC = () => {
           <Toolbar>
             <Grid container direction="row">
               <Typography variant="caption" color="inherit">
-                © 2021 Júl | mailtrap | Strava API | Michal Krasňanský
+                © 2021 Júl | nodemailer | Strava API | Michal Krasňanský
               </Typography>
             </Grid>
           </Toolbar>

@@ -72,7 +72,7 @@ export const tileData: GalleryData[] = [
     title: "About this page",
     info: "My CV React/Nest with types and Material-UI",
     describe:
-      "Ahoj, ak si už tu tak ti poviem trochu detailov o tomto mojom portfóliu. Vydal som ho v júly 2021, keď to píšem tak sa modlím, aby bol ďalší rok za mnou, lebo chcem mať tých informácií v hlave ešte milión krát viac ako teraz. Toto moje portfólio sa vám zatiaľ bude dúfam páčiť použil som backend, ale iba na posielanie formuláru ostatné ostáva v Reacte. V material-ui som nový, ale rýchlo sa to na mňa lepí, čo som zabordelil tak to v budúcnosti odbordelim :) . Strava API je super vec hlavne pre takých bláznov, ako som ja. ",
+      "Ahoj, ak si už tu tak ti poviem trochu detailov o tomto mojom portfóliu. Vydal som ho v júly 2021. Toto moje portfólio sa vám zatiaľ bude dúfam páčiť použil som nodemailer volany cez axios na posielanie formuláru, ostatné ostáva v React.Potom strava API je super vec hlavne pre takých bláznov, ako som ja. Keď bude čas plánujem vytiahnuť z toho viac a spraviť takú internú app. ",
     sourceHref: "https://github.com/MKrasnansk/krasnansky-react-cv",
     liveDemoHref: "",
     imgSrc: `${cv}`,
