@@ -165,6 +165,7 @@ export const ContactForm: React.FC = () => {
                 onChange={handleName}
                 label="Name"
                 id="name"
+                required
                 name="name"
                 InputProps={{
                   className: classes.color,
@@ -235,11 +236,12 @@ export const ContactForm: React.FC = () => {
                 onChange={handleMessage}
                 value={formInputs.message}
                 required
+                multiline
                 label="Message"
                 id="message"
                 name="message"
-                multiline
                 maxRows={5}
+                rows={3}
                 InputProps={{
                   className: classes.color,
                   startAdornment: (

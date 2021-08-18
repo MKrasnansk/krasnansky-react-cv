@@ -54,13 +54,19 @@ export const StravaApi: React.FC = () => {
 
         let t = stravaActivityResponse.data[i].moving_time / 60;
         let min = Math.floor(t);
-        let sec = Math.floor(60 * (t - min));
+        let sec: number | string = Math.floor(60 * (t - min));
+        if (sec< 10) {
+          sec = `0${sec}`
+        }
         let time = `${min}:${sec} min.`;
 
         let d = stravaActivityResponse.data[i].distance / 1000;
         let tempMin = Math.floor(t / d);
-        let tempSec = Math.floor(60 * (t / d - tempMin));
-        let temp = `${tempMin}:${tempSec} min/km`;
+        let tempSec: number | string = Math.floor(60 * (t / d - tempMin));
+        if (tempSec< 10) {
+          tempSec = `0${tempSec}`
+        } 
+        let temp = `${tempMin}:${(tempSec)} min/km`;
 
         if (distance === "0.00 Km" || temp === "Infinity min/km") {
           distance = stravaActivityResponse.data[i].max_heartrate + " maxHR";

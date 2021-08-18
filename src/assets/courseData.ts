@@ -10,7 +10,6 @@ export const udemyCourses: Data[] = [
   { title: "The Complete Modern JavaScript Masterclass 2021" },
   { title: "Quasar V1: PWA (with Vue JS 2, Firebase, NodeJS & Express)" },
   { title: "Vuetify: Create an App with Vue JS & Vuex - in 5 Hours!" },
-  { title: "Vuetify: Create an App with Vue JS & Vuex - in 5 Hours!" },
   { title: "JavaScript DOM Dynamic Web interactive content Boot Camp" },
 ];
 export const learnCourses: Data[] = [

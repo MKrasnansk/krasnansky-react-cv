@@ -7,6 +7,7 @@ import mealshop from "./img/mealshop.png";
 import redux from "./img/redux.png";
 import router from "./img/router.png";
 import todo from "./img/todo.png";
+import rmgarden from "./img/rmgarden.png";
 export interface GalleryData {
   id: number;
   title: string;
@@ -108,5 +109,15 @@ export const tileData: GalleryData[] = [
     sourceHref: "https://github.com/MKrasnansk/react-Authentication-firebase",
     liveDemoHref: "https://authentication-firebase-react.netlify.app/",
     imgSrc: `${auth}`,
+  },
+    {
+    id: 10,
+    title: "RM-Garden",
+    info: "Web site for RM - Garden.",
+    describe:
+      "Web stránka pre záhradkársku firmu RM garden. Použitý react, typescript, router, material-ui.",
+    sourceHref: "",
+    liveDemoHref: "https://rm-garden.netlify.app/",
+    imgSrc: `${rmgarden}`,
   },
 ];
