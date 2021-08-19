@@ -240,7 +240,6 @@ export const ContactForm: React.FC = () => {
                 label="Message"
                 id="message"
                 name="message"
-                maxRows={5}
                 rows={3}
                 InputProps={{
                   className: classes.color,
