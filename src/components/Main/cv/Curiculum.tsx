@@ -137,7 +137,7 @@ export const Curiculum: React.FC = () => {
               predovšetkým na technológie (
               <span>
                 React.js, TypeScript, Material-UI, Css/Sass, Nest.js(Node.js) +
-                Databázy
+                NoSql
               </span>
               ), no zároveň som otvorený novým výzvam.
             </p>
@@ -151,7 +151,7 @@ export const Curiculum: React.FC = () => {
                 <li>Spolupráca na projektoch</li>
                 <li>
                   Technológie: React.js, TypeScript, Css, Bootsrap, Nest.js,
-                  Node.js, Api{" "}
+                  Node.js, Api
                 </li>
               </ul>
               <li>
@@ -221,7 +221,6 @@ export const Curiculum: React.FC = () => {
               <li>Vue.js + SPA</li>
               <li>Css preprocesory: Sass</li>
               <li>Git</li>
-              <li>Sql</li>
               <li>OOP</li>
               <li>Bootstrap</li>
               <li>Tailwind Css</li>
