@@ -142,12 +142,14 @@ export const Curiculum: React.FC = () => {
 							<hr />
 							<ul>
 								<li>Ringier axel springer - web-developer (3/2021 - 7/2021)</li>
-								<ul>
-									<li>Práca v agilnom teame</li>
-									<li>Spolupráca na projektoch</li>
-									<li>Technológie: React.js, TypeScript, Css, Bootsrap, Nest.js, Node.js, Api</li>
-								</ul>
-								<li>Ďalšie pracovné skúsenosti nie sú z oblasti záujmu (Taxi, Manažér v sťahovacej službe, Koordinátor vo Vw-BA, Vodič MHD, Mechanik v autoservise)</li>
+								<li>Bolt - Taxi</li>
+								<li>Movex - Manažér v sťahovacej službe</li>
+								<li>Vw Bratislava - Koordinátor pre externú firmu Holen</li>
+								<li>Dopravný podnik - Vodič MHD</li>
+								<li>VB Taxi</li>
+								<li>Shell - Predajca</li>
+								<li>Autoservis Pezionk - Karosár</li>
+								<li>Reserved - Predajca</li>
 							</ul>
 
 							<hr />
