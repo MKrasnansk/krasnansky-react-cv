@@ -13,31 +13,31 @@ import { StravaApi } from "./Main/strava/StravaApi";
 import { WorkExperience } from "./Main/WorkExperience";
 
 export const MainLayout: React.FC = () => {
-  return (
-    <div>
-      <Container>
-        <Box bgcolor="text.secondary">
-          <main>
-            <header>
-              <HeaderMain />
-            </header>
-            <article>
-              <Nav />
-              <HeaderChip />
-              <OtherChips />
-              <GalleryCard />
-              <Certification />
-              <NextGoals />
-              <WorkExperience />
-            </article>
-          </main>
-          <footer>
-            <SocialIcon />
-            <StravaApi />
-            <Fffoter />
-          </footer>
-        </Box>
-      </Container>
-    </div>
-  );
+	return (
+		<div>
+			<Container>
+				<Box bgcolor="text.secondary">
+					<main>
+						<header>
+							<HeaderMain />
+						</header>
+						<article>
+							<Nav />
+							<HeaderChip />
+							<OtherChips />
+							<GalleryCard />
+							<Certification />
+							<NextGoals />
+							<WorkExperience />
+						</article>
+					</main>
+					<footer>
+						<SocialIcon />
+						<StravaApi />
+						<Fffoter />
+					</footer>
+				</Box>
+			</Container>
+		</div>
+	);
 };

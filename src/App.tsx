@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
 import { Box, CssBaseline, ThemeProvider } from "@material-ui/core";
+import axios, { AxiosResponse, AxiosTransformer } from "axios";
+import React, { useEffect } from "react";
 import "./App.scss";
 import { MainLayout } from "./components/MainLayout";
 import { theme } from "./theme";
-import axios, { AxiosResponse, AxiosTransformer } from "axios";
 
 export const App: React.FC = () => {
 	useEffect(() => {
