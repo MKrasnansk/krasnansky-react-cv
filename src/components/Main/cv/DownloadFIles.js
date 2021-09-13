@@ -9,9 +9,9 @@ export const DownloadFiles = () => {
 	const download = (file) => downloadFile(file);
 	return (
 		<>
-			<Grid container style={{ height: "100%" }} item justifyContent="center" alignItems="center">
+			<Grid container item justifyContent="center" style={{ marginTop: 20 }} alignItems="center">
 				{files.map((file, idx) => (
-					<Card key={idx} style={{ flex: 1 }}>
+					<Card key={idx}>
 						<CardContent style={{ textAlign: "center", justifyContent: "center", alignItems: "center" }}>
 							<Typography>Moje CV si môžte stiahnut ako PDF</Typography>
 						</CardContent>
