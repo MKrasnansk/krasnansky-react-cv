@@ -1,7 +1,7 @@
 import { Card, CardActions, CardContent, Dialog, DialogTitle, Grid, Link, List, ListItem, Typography } from "@material-ui/core";
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
-import { StravaApiLogoIcon, StravaBtnIcon } from "../../Main/strava/StravaIcon";
+import { StravaApiLogoIcon } from "../../Main/strava/StravaIcon";
 interface Props {
 	open: boolean;
 	selectedValue: string;
@@ -78,14 +78,13 @@ export const SimpleComponentDialog = (props: Props) => {
 						</List>
 					</Grid>
 				</CardContent>
-				<Grid container justifyContent="center">
-					<CardActions style={{ marginRight: 40 }}>
-						<StravaApiLogoIcon />
+				<CardActions>
+					<Grid container justifyContent="center" alignItems="center">
 						<Link underline="none" href="https://www.strava.com/athletes/9737766">
-							<StravaBtnIcon />
+							<StravaApiLogoIcon />
 						</Link>
-					</CardActions>
-				</Grid>
+					</Grid>
+				</CardActions>
 			</Card>
 		</Dialog>
 	);
