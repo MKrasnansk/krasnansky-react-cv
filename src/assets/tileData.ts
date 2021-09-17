@@ -91,7 +91,7 @@ export const tileData: GalleryData[] = [
 		info: "App practice example to work with react-router.",
 		describe: "Prakticke precvicovanie SPA, react-router-dom, lazy-loading, firebase hosting.",
 		sourceHref: "https://github.com/MKrasnansk/react-router-practise",
-		liveDemoHref: "https://react-route-mk.netlify.app/quotes",
+		liveDemoHref: "https://react-prep-6e47c.web.app/quotes",
 		imgSrc: `${router}`,
 	},
 
