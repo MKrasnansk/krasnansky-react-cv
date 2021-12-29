@@ -1,5 +1,6 @@
 {
   "name": "krasnansky-react-cv",
+  "homepage":"cvKrasnansky.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@testing-library/user-event": "^12.1.10",
     "@types/react-redux": "^7.1.18",
     "axios": "^0.21.1",
+    "gh-pages": "^3.2.3",
     "material-auto-rotating-carousel": "^3.0.2",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
@@ -32,7 +34,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy":"npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
