@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/cvKrasnansky.github.io/static/css/main.9f35722b.chunk.css",
+    "main.js": "/cvKrasnansky.github.io/static/js/main.7fa5e0e6.chunk.js",
+    "main.js.map": "/cvKrasnansky.github.io/static/js/main.7fa5e0e6.chunk.js.map",
+    "runtime-main.js": "/cvKrasnansky.github.io/static/js/runtime-main.f390a7ca.js",
+    "runtime-main.js.map": "/cvKrasnansky.github.io/static/js/runtime-main.f390a7ca.js.map",
+    "static/js/2.ca531616.chunk.js": "/cvKrasnansky.github.io/static/js/2.ca531616.chunk.js",
+    "static/js/2.ca531616.chunk.js.map": "/cvKrasnansky.github.io/static/js/2.ca531616.chunk.js.map",
+    "index.html": "/cvKrasnansky.github.io/index.html",
+    "static/css/main.9f35722b.chunk.css.map": "/cvKrasnansky.github.io/static/css/main.9f35722b.chunk.css.map",
+    "static/js/2.ca531616.chunk.js.LICENSE.txt": "/cvKrasnansky.github.io/static/js/2.ca531616.chunk.js.LICENSE.txt",
+    "static/media/Bagram.eeef0076.png": "/cvKrasnansky.github.io/static/media/Bagram.eeef0076.png",
+    "static/media/Strava_Logo.e9fda501.svg": "/cvKrasnansky.github.io/static/media/Strava_Logo.e9fda501.svg",
+    "static/media/api_logo_pwrdBy_strava_horiz_gray.03ae5421.svg": "/cvKrasnansky.github.io/static/media/api_logo_pwrdBy_strava_horiz_gray.03ae5421.svg",
+    "static/media/auth.a23a1230.png": "/cvKrasnansky.github.io/static/media/auth.a23a1230.png",
+    "static/media/btn_strava_connectwith_light.f48e9539.svg": "/cvKrasnansky.github.io/static/media/btn_strava_connectwith_light.f48e9539.svg",
+    "static/media/cv.e7785501.png": "/cvKrasnansky.github.io/static/media/cv.e7785501.png",
+    "static/media/itunesReact.d31b72a3.png": "/cvKrasnansky.github.io/static/media/itunesReact.d31b72a3.png",
+    "static/media/itunesVue.0e20cb7a.png": "/cvKrasnansky.github.io/static/media/itunesVue.0e20cb7a.png",
+    "static/media/krasnansky.ee9f65c6.png": "/cvKrasnansky.github.io/static/media/krasnansky.ee9f65c6.png",
+    "static/media/mealshop.0eca773c.png": "/cvKrasnansky.github.io/static/media/mealshop.0eca773c.png",
+    "static/media/redux.31032fb4.png": "/cvKrasnansky.github.io/static/media/redux.31032fb4.png",
+    "static/media/rmgarden.71140dac.png": "/cvKrasnansky.github.io/static/media/rmgarden.71140dac.png",
+    "static/media/router.86acb9a8.png": "/cvKrasnansky.github.io/static/media/router.86acb9a8.png",
+    "static/media/todo.d303a5d7.png": "/cvKrasnansky.github.io/static/media/todo.d303a5d7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f390a7ca.js",
+    "static/js/2.ca531616.chunk.js",
+    "static/css/main.9f35722b.chunk.css",
+    "static/js/main.7fa5e0e6.chunk.js"
+  ]
+}
