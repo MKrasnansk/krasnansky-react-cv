@@ -20,7 +20,7 @@
     "react-download-link": "^2.3.0",
     "react-material-ui-form-validator": "^2.1.4",
     "react-redux": "^7.2.4",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "react-swipeable-views": "^0.14.0",
     "react-transition-group": "^4.4.2",
     "sass": "^1.35.1",
